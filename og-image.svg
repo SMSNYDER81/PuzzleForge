@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080d18"/>
+      <stop offset="50%" style="stop-color:#0d1424"/>
+      <stop offset="100%" style="stop-color:#080d18"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#080d18;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Border accent -->
+  <rect x="0" y="0" width="1200" height="4" fill="#3b82f6"/>
+  <rect x="0" y="626" width="1200" height="4" fill="#3b82f6" opacity="0.3"/>
+
+  <!-- Left decorative grid dots -->
+  <g opacity="0.08" fill="#3b82f6">
+    <circle cx="80" cy="120" r="3"/><circle cx="120" cy="120" r="3"/><circle cx="160" cy="120" r="3"/>
+    <circle cx="80" cy="160" r="3"/><circle cx="120" cy="160" r="3"/><circle cx="160" cy="160" r="3"/>
+    <circle cx="80" cy="200" r="3"/><circle cx="120" cy="200" r="3"/><circle cx="160" cy="200" r="3"/>
+    <circle cx="80" cy="240" r="3"/><circle cx="120" cy="240" r="3"/><circle cx="160" cy="240" r="3"/>
+    <circle cx="80" cy="280" r="3"/><circle cx="120" cy="280" r="3"/><circle cx="160" cy="280" r="3"/>
+  </g>
+
+  <!-- Right decorative grid dots -->
+  <g opacity="0.08" fill="#3b82f6">
+    <circle cx="1040" cy="350" r="3"/><circle cx="1080" cy="350" r="3"/><circle cx="1120" cy="350" r="3"/>
+    <circle cx="1040" cy="390" r="3"/><circle cx="1080" cy="390" r="3"/><circle cx="1120" cy="390" r="3"/>
+    <circle cx="1040" cy="430" r="3"/><circle cx="1080" cy="430" r="3"/><circle cx="1120" cy="430" r="3"/>
+    <circle cx="1040" cy="470" r="3"/><circle cx="1080" cy="470" r="3"/><circle cx="1120" cy="470" r="3"/>
+    <circle cx="1040" cy="510" r="3"/><circle cx="1080" cy="510" r="3"/><circle cx="1120" cy="510" r="3"/>
+  </g>
+
+  <!-- Logo icon -->
+  <text x="140" y="310" font-size="90" text-anchor="middle" fill="#3b82f6" opacity="0.9">⚙</text>
+
+  <!-- Logo text -->
+  <text x="240" y="270" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" fill="#e8edf5" letter-spacing="-2">Puzzle</text>
+  <text x="614" y="270" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" fill="#3b82f6" letter-spacing="-2">Forge</text>
+
+  <!-- Tagline -->
+  <text x="240" y="330" font-family="Arial, sans-serif" font-size="28" fill="#7e9ab8" letter-spacing="0.5">Free KDP Puzzle Book Generator</text>
+
+  <!-- Divider -->
+  <rect x="240" y="358" width="720" height="1.5" fill="#3b82f6" opacity="0.3"/>
+
+  <!-- Feature pills -->
+  <!-- Word Search -->
+  <rect x="240" y="380" width="180" height="44" rx="22" fill="#16233c" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="330" y="408" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">🔤 Word Search</text>
+
+  <!-- Sudoku -->
+  <rect x="436" y="380" width="140" height="44" rx="22" fill="#16233c" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="506" y="408" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">🔢 Sudoku</text>
+
+  <!-- Crossword -->
+  <rect x="592" y="380" width="158" height="44" rx="22" fill="#16233c" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="671" y="408" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">✏️ Crossword</text>
+
+  <!-- Maze -->
+  <rect x="766" y="380" width="120" height="44" rx="22" fill="#16233c" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="826" y="408" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">🌀 Maze</text>
+
+  <!-- Second row -->
+  <!-- Hangman -->
+  <rect x="240" y="438" width="148" height="44" rx="22" fill="#16233c" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="314" y="466" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">🪢 Hangman</text>
+
+  <!-- Scramble -->
+  <rect x="404" y="438" width="152" height="44" rx="22" fill="#16233c" stroke="#3b82f6" stroke-width="1" opacity="0.8"/>
+  <text x="480" y="466" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">🔀 Scramble</text>
+
+  <!-- Bulk badge -->
+  <rect x="572" y="438" width="192" height="44" rx="22" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+  <text x="668" y="466" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">⚡ Bulk 1–50 Puzzles</text>
+
+  <!-- Free badge -->
+  <rect x="780" y="438" width="106" height="44" rx="22" fill="#3b82f6" opacity="0.9"/>
+  <text x="833" y="466" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">100% Free</text>
+
+  <!-- Bottom URL -->
+  <text x="600" y="578" font-family="Arial, sans-serif" font-size="22" fill="#3d5470" text-anchor="middle" letter-spacing="1">the-puzzle-forge.org</text>
+</svg>

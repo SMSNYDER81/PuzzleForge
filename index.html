@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PuzzleForge — Free KDP Puzzle Book Generator | Word Search, Sudoku, Crossword & More</title>
+<meta name="description" content="Free KDP puzzle book generator. Create word searches, sudoku, crosswords, word scrambles, hangman and mazes for Amazon low-content books. Bulk generate up to 50 puzzles and download PDF or PNG instantly. The free BookBolt alternative.">
+<meta name="keywords" content="free KDP puzzle book generator, word search book maker, sudoku generator KDP, low content book generator, print on demand puzzle creator, bulk puzzle generator, BookBolt alternative, Amazon KDP puzzle books, free puzzle book maker">
+<link rel="canonical" href="https://the-puzzle-forge.org/">
+<meta property="og:title" content="PuzzleForge — Free KDP Puzzle Book Generator">
+<meta property="og:description" content="Create word searches, sudoku, crosswords & more for Amazon KDP. Bulk generate up to 50 puzzles. Download PDF or PNG free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://the-puzzle-forge.org/">
+<meta property="og:image" content="https://the-puzzle-forge.org/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PuzzleForge — Free KDP Puzzle Book Generator">
+<meta name="twitter:description" content="6 puzzle types. Bulk generate 1–50. Export PDF or PNG. Built for KDP publishers. 100% free, no sign-up.">
+<meta name="twitter:image" content="https://the-puzzle-forge.org/og-image.svg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiMwODBkMTgiLz48dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtc2l6ZT0iMzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMzYjgyZjYiPuKamTwvdGV4dD48L3N2Zz4=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PuzzleForge","url":"https://the-puzzle-forge.org/","description":"Free KDP puzzle book generator for Amazon low-content publishing. Create word searches, sudoku, crosswords, scrambles, hangman and mazes.","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Word Search Generator","Sudoku Generator","Crossword Generator","Word Scramble Generator","Hangman Generator","Maze Generator","Bulk PDF Export","PNG Download","KDP Ready Output","BYOK AI Integration"]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080d18;--bg2:#0d1424;--bg3:#111c30;--bg4:#16233c;--bg5:#1c2d4a;
+  --line:rgba(99,140,210,0.10);--line2:rgba(99,140,210,0.18);
+  --text:#e8edf5;--text2:#7e9ab8;--text3:#3d5470;
+  --blue:#3b82f6;--blue2:#60a5fa;--blue-dim:rgba(59,130,246,0.12);--blue-glow:rgba(59,130,246,0.40);
+  --cyan:#22d3ee;--cyan-dim:rgba(34,211,238,0.10);
+  --green:#4ade80;--green-dim:rgba(74,222,128,0.10);
+  --red:#f87171;--red-dim:rgba(248,113,113,0.12);
+  --amber:#f59e0b;--amber-dim:rgba(245,158,11,0.12);
+  --syne:'Syne',sans-serif;--mono:'IBM Plex Mono',monospace;--serif:'Crimson Pro',serif;
+  --radius:8px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--syne);font-size:15px;line-height:1.6;min-height:100vh}
+
+/* HEADER */
+header{border-bottom:1px solid var(--line);padding:0 2rem;display:flex;align-items:center;gap:1.5rem;height:58px;position:sticky;top:0;z-index:200;background:rgba(8,13,24,0.97);backdrop-filter:blur(16px)}
+.logo{font-size:1.2rem;font-weight:900;letter-spacing:-0.03em;display:flex;align-items:center;gap:0.45rem;flex-shrink:0;text-decoration:none;color:var(--text)}
+.logo-icon{color:var(--blue)}
+.logo-text span{color:var(--blue)}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:0.75rem}
+.header-badge{font-family:var(--mono);font-size:0.67rem;color:var(--cyan);background:var(--cyan-dim);border:1px solid rgba(34,211,238,0.2);border-radius:20px;padding:0.18rem 0.6rem;letter-spacing:0.04em}
+.header-nav{display:flex;gap:0.25rem}
+.header-nav a{font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--text2);text-decoration:none;padding:0.3rem 0.6rem;border-radius:5px;transition:all 0.2s}
+.header-nav a:hover{color:var(--text);background:var(--bg3)}
+
+/* ADSENSE TOP BANNER */
+.ad-banner-top{background:var(--bg2);border-bottom:1px solid var(--line);padding:0.6rem 2rem;display:flex;justify-content:center;align-items:center;min-height:60px}
+.ad-placeholder{background:var(--bg3);border:1px dashed var(--line2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.65rem;color:var(--text3);letter-spacing:0.05em}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--bg2) 0%,#0a1628 50%,var(--bg2) 100%);border-bottom:1px solid var(--line);padding:2.5rem 2rem 2rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% -10%,rgba(59,130,246,0.12),transparent);pointer-events:none}
+.hero-eyebrow{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue2);margin-bottom:0.6rem}
+.hero h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;letter-spacing:-0.03em;line-height:1.05;color:var(--text);margin-bottom:0.65rem}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-family:var(--serif);font-size:1.05rem;color:var(--text2);max-width:620px;margin:0 auto 1.25rem;line-height:1.6}
+.hero-features{display:flex;flex-wrap:wrap;gap:0.45rem;justify-content:center;margin-bottom:1.25rem}
+.hero-pill{font-size:0.7rem;font-weight:600;letter-spacing:0.04em;background:var(--bg4);border:1px solid var(--line2);color:var(--text2);border-radius:20px;padding:0.28rem 0.7rem}
+.hero-pill strong{color:var(--blue2)}
+.hero-cta{display:inline-flex;align-items:center;gap:0.5rem;background:var(--blue);color:#fff;font-family:var(--syne);font-weight:700;font-size:0.82rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.7rem 1.6rem;border-radius:8px;border:none;cursor:pointer;transition:all 0.2s;text-decoration:none}
+.hero-cta:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 6px 24px var(--blue-glow)}
+
+/* PUZZLE TYPE SELECTOR */
+.type-selector-wrap{background:var(--bg2);border-bottom:1px solid var(--line);padding:1.1rem 2rem}
+.type-selector-label{font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:0.65rem}
+.type-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0.45rem}
+.type-card{background:var(--bg3);border:2px solid var(--line);border-radius:10px;padding:0.65rem 0.4rem;cursor:pointer;text-align:center;transition:all 0.2s;display:flex;flex-direction:column;align-items:center;gap:0.25rem}
+.type-card:hover{border-color:var(--blue);background:var(--blue-dim)}
+.type-card.active{border-color:var(--blue);background:var(--blue-dim);box-shadow:0 0 0 1px rgba(59,130,246,0.15)}
+.type-icon{font-size:1.3rem;line-height:1}
+.type-name{font-size:0.63rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2)}
+.type-card.active .type-name{color:var(--blue2)}
+
+/* APP LAYOUT */
+.app-wrap{display:grid;grid-template-columns:320px 1fr;min-height:calc(100vh - 58px)}
+
+/* SIDEBAR */
+.sidebar{border-right:1px solid var(--line);padding:1.1rem;overflow-y:auto;display:flex;flex-direction:column;gap:0.9rem;background:var(--bg)}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.panel-header{padding:0.55rem 0.85rem;background:var(--bg3);border-bottom:1px solid var(--line);font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text2);display:flex;align-items:center;gap:0.5rem;cursor:pointer;user-select:none}
+.panel-header .panel-toggle{margin-left:auto;font-size:0.7rem;color:var(--text3);transition:transform 0.2s}
+.panel.collapsed .panel-body{display:none}
+.panel.collapsed .panel-toggle{transform:rotate(-90deg)}
+.panel-body{padding:0.85rem;display:flex;flex-direction:column;gap:0.65rem}
+
+label{font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text2);display:block;margin-bottom:0.25rem}
+select,input[type="number"],input[type="text"],input[type="password"],textarea{width:100%;background:var(--bg4);border:1px solid var(--line2);border-radius:6px;color:var(--text);font-family:var(--syne);font-size:0.82rem;padding:0.48rem 0.68rem;outline:none;transition:border-color 0.2s}
+select:focus,input:focus,textarea:focus{border-color:var(--blue)}
+textarea{resize:vertical;min-height:100px;font-family:var(--mono);font-size:0.76rem;line-height:1.5}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+
+.check-group{display:flex;flex-wrap:wrap;gap:0.38rem}
+.check-pill{display:flex;align-items:center;gap:0.28rem;background:var(--bg4);border:1px solid var(--line2);border-radius:20px;padding:0.25rem 0.58rem;cursor:pointer;font-size:0.7rem;font-weight:600;letter-spacing:0.04em;color:var(--text2);transition:all 0.2s;user-select:none}
+.check-pill input{display:none}
+.check-pill.checked{background:var(--blue-dim);border-color:var(--blue);color:var(--blue2)}
+
+.category-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3rem;max-height:175px;overflow-y:auto}
+.cat-btn{background:var(--bg4);border:1px solid var(--line2);border-radius:6px;color:var(--text2);font-family:var(--syne);font-size:0.65rem;font-weight:600;padding:0.3rem 0.42rem;cursor:pointer;text-align:left;transition:all 0.15s;letter-spacing:0.03em}
+.cat-btn:hover,.cat-btn.active{border-color:var(--blue);color:var(--blue2);background:var(--blue-dim)}
+.word-count-badge{font-family:var(--mono);font-size:0.65rem;color:var(--cyan);background:var(--cyan-dim);border-radius:4px;padding:0.1rem 0.32rem;margin-left:auto}
+
+/* BYOK PANEL */
+.ai-status{display:flex;align-items:center;gap:0.4rem;font-size:0.7rem;font-family:var(--mono);padding:0.45rem 0.6rem;border-radius:6px;background:var(--bg4);border:1px solid var(--line2)}
+.ai-dot{width:7px;height:7px;border-radius:50%;background:var(--text3);flex-shrink:0}
+.ai-dot.active{background:var(--green)}
+.ai-dot.loading{background:var(--amber);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.ai-status-text{color:var(--text2)}
+.ai-generate-btn{background:var(--green-dim);border:1px solid rgba(74,222,128,0.3);color:var(--green);font-family:var(--syne);font-size:0.7rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;padding:0.45rem 0.75rem;border-radius:6px;cursor:pointer;transition:all 0.2s;width:100%;display:none}
+.ai-generate-btn:hover{background:rgba(74,222,128,0.2)}
+.ai-generate-btn.visible{display:block}
+.api-notice{font-size:0.65rem;color:var(--text3);line-height:1.5;font-family:var(--serif);font-style:italic}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:0.4rem;border:none;border-radius:6px;font-family:var(--syne);font-weight:700;font-size:0.77rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.52rem 0.95rem;cursor:pointer;transition:all 0.2s}
+.btn-primary{background:var(--blue);color:#fff;width:100%;padding:0.68rem;font-size:0.8rem}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 4px 20px var(--blue-glow)}
+.btn-primary:active{transform:translateY(0)}
+.btn-secondary{background:var(--bg4);border:1px solid var(--line2);color:var(--text)}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue2)}
+.btn-sm{padding:0.3rem 0.58rem;font-size:0.67rem}
+
+.bulk-count{display:flex;align-items:center;gap:0.38rem}
+.bulk-count button{background:var(--bg4);border:1px solid var(--line2);color:var(--text);width:28px;height:28px;border-radius:5px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.15s}
+.bulk-count button:hover{border-color:var(--blue);color:var(--blue2)}
+.bulk-count input{text-align:center;width:48px;flex-shrink:0}
+
+.progress-wrap{display:none;flex-direction:column;gap:0.45rem}
+.progress-wrap.visible{display:flex}
+.progress-bar-bg{background:var(--bg4);border-radius:4px;height:5px;overflow:hidden}
+.progress-bar-fill{height:100%;background:var(--blue);border-radius:4px;transition:width 0.3s ease;width:0%}
+.progress-label{font-size:0.68rem;color:var(--text2);font-family:var(--mono)}
+
+.export-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.45rem}
+.btn-export{background:var(--bg4);border:1px solid var(--line2);color:var(--text);border-radius:8px;padding:0.6rem 0.45rem;cursor:pointer;font-family:var(--syne);font-size:0.7rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:0.28rem;transition:all 0.2s}
+.btn-export:hover{border-color:var(--blue);background:var(--blue-dim);color:var(--blue2)}
+.btn-export .export-icon{font-size:1.2rem}
+.btn-export .export-desc{font-size:0.58rem;color:var(--text3);font-weight:400;text-transform:none;letter-spacing:0}
+
+.settings-section{display:none}
+.settings-section.active{display:contents}
+
+/* MAIN */
+.main-area{display:flex;flex-direction:column}
+.toolbar{border-bottom:1px solid var(--line);padding:0.58rem 1.4rem;display:flex;align-items:center;gap:0.65rem;background:var(--bg2);flex-wrap:wrap;min-height:46px}
+.toolbar-title{font-size:0.88rem;font-weight:700;color:var(--text);flex:1}
+.toolbar-title span{color:var(--blue2);font-family:var(--mono);font-size:0.68rem;font-weight:400;margin-left:0.5rem}
+.puzzle-nav{display:none;align-items:center;gap:0.45rem}
+.puzzle-nav.visible{display:flex}
+.nav-btn{background:var(--bg4);border:1px solid var(--line2);color:var(--text2);width:27px;height:27px;border-radius:5px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.82rem;transition:all 0.15s}
+.nav-btn:hover:not(:disabled){border-color:var(--blue);color:var(--blue2)}
+.nav-btn:disabled{opacity:0.3;cursor:default}
+.nav-label{font-family:var(--mono);font-size:0.68rem;color:var(--text2);min-width:50px;text-align:center}
+
+/* ADSENSE SIDEBAR */
+.ad-sidebar{margin-top:auto;padding-top:0.9rem}
+
+.preview-area{flex:1;padding:1.4rem;display:flex;align-items:flex-start;justify-content:center;overflow:auto;background:var(--bg)}
+
+/* PUZZLE PAGES */
+.puzzle-page{background:#fff;color:#111;box-shadow:0 8px 60px rgba(0,0,30,0.7);position:relative}
+.puzzle-page-inner{padding:0.5in;display:flex;flex-direction:column;gap:0.2in;height:100%}
+.puzzle-title-area{text-align:center;border-bottom:2px solid #111;padding-bottom:0.1in;margin-bottom:0.04in}
+.puzzle-main-title{font-family:'Syne',sans-serif;font-size:18pt;font-weight:800;letter-spacing:-0.01em;color:#111;line-height:1.1}
+.puzzle-subtitle{font-family:'Crimson Pro',serif;font-size:9pt;color:#777;margin-top:2pt;font-style:italic}
+.puzzle-num{position:absolute;top:0.25in;right:0.42in;font-family:monospace;font-size:7.5pt;color:#ccc}
+.ws-grid{display:inline-grid;gap:0;font-family:monospace;line-height:1}
+.ws-cell{display:flex;align-items:center;justify-content:center;font-weight:500;color:#111;text-transform:uppercase}
+.ws-cell.highlighted{background:#dbeafe;font-weight:700;color:#1d4ed8}
+.ws-grid-wrap{display:flex;justify-content:center}
+.word-list-area{border-top:1px solid #e5e7eb;padding-top:0.1in}
+.word-list-title{font-family:'Syne',sans-serif;font-size:7.5pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:5pt}
+.word-list-grid{display:grid;gap:2pt 7pt}
+.word-item{font-family:'Syne',sans-serif;font-size:7.5pt;font-weight:600;color:#222;text-transform:uppercase;letter-spacing:0.05em}
+.scramble-list{display:flex;flex-direction:column;gap:0.07in}
+.scramble-item{display:grid;grid-template-columns:1.4in 1in 0.4in;align-items:center;gap:0.1in;font-family:monospace;font-size:10.5pt;color:#111;border-bottom:0.5pt solid #e5e7eb;padding-bottom:4pt}
+.scramble-word{font-weight:700;letter-spacing:0.08em}
+.scramble-blank{border-bottom:1pt solid #999;height:14pt}
+.scramble-num{font-size:7pt;color:#ccc}
+.crossword-wrap{display:flex;gap:0.16in;align-items:flex-start}
+.crossword-grid{display:inline-grid;gap:0;border:2px solid #111;flex-shrink:0}
+.cw-cell{display:flex;align-items:center;justify-content:center;border:0.5px solid #ccc;position:relative;font-family:'Syne',sans-serif;font-weight:700;text-transform:uppercase;color:#111}
+.cw-cell.black{background:#111;border-color:#111}
+.cw-cell.white{background:#fff}
+.cw-num{position:absolute;top:1px;left:2px;font-size:6px;font-family:monospace;color:#666;line-height:1}
+.crossword-clues{flex:1;min-width:0}
+.clue-section{margin-bottom:0.07in}
+.clue-section-title{font-family:'Syne',sans-serif;font-size:7.5pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1pt solid #333;padding-bottom:2pt;margin-bottom:3pt}
+.clue-item{font-size:7pt;font-family:'Crimson Pro',serif;color:#222;margin-bottom:2pt;display:flex;gap:3pt}
+.clue-num{font-weight:700;font-family:monospace;min-width:15pt;flex-shrink:0}
+.sudoku-grid{display:inline-grid;grid-template-columns:repeat(9,1fr);border:2.5px solid #111;font-family:monospace}
+.sdk-cell{display:flex;align-items:center;justify-content:center;font-weight:600;aspect-ratio:1}
+.sdk-cell.given{color:#111;font-weight:800}
+.sdk-cell.empty{color:#fff}
+.sdk-cell.answer{color:#2563eb;font-weight:500}
+.sudoku-wrap{display:flex;flex-direction:column;align-items:center;gap:0.07in}
+.sudoku-difficulty{font-family:monospace;font-size:7pt;color:#888;text-align:center;letter-spacing:0.08em;text-transform:uppercase}
+.hangman-wrap{display:flex;flex-direction:column;align-items:center;gap:0.12in}
+.hangman-blanks{display:flex;gap:0.09in;justify-content:center;flex-wrap:wrap}
+.hangman-blank{border-bottom:2.5pt solid #111;width:0.25in;height:0.28in;display:inline-block}
+.hangman-clue{font-family:'Crimson Pro',serif;font-size:10pt;color:#333;text-align:center;font-style:italic;max-width:4.5in;margin:0 auto;line-height:1.4}
+.hangman-hint-label{font-family:'Syne',sans-serif;font-size:7pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:3pt;text-align:center}
+.hangman-letters{font-family:monospace;font-size:7pt;color:#bbb;text-align:center;letter-spacing:0.14em}
+.wrong-list{display:flex;gap:0.07in;flex-wrap:wrap;justify-content:center}
+.wrong-blank{border-bottom:1.5pt solid #ddd;width:0.21in;height:0.26in}
+.maze-wrap{display:flex;flex-direction:column;align-items:center;gap:0.09in}
+.maze-canvas{display:block}
+
+/* Empty state */
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;height:400px;color:var(--text3);text-align:center}
+.empty-icon{font-size:3rem;opacity:0.22}
+.empty-title{font-size:1rem;font-weight:700;color:var(--text2)}
+.empty-sub{font-size:0.76rem;max-width:240px;line-height:1.5}
+
+/* Toast */
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--bg3);border:1px solid var(--blue);color:var(--text);font-size:0.76rem;font-weight:600;padding:0.58rem 0.95rem;border-radius:8px;z-index:999;animation:toastIn 0.25s ease;box-shadow:0 4px 24px rgba(0,0,30,0.5)}
+@keyframes toastIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* SEO SECTIONS */
+.seo-wrap{background:var(--bg2);border-top:1px solid var(--line)}
+.seo-inner{max-width:960px;margin:0 auto;padding:3rem 2rem}
+.seo-inner h2{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;color:var(--text);margin-bottom:1rem}
+.seo-inner h2 span{color:var(--blue2)}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:2.5rem}
+.feature-card{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:1.1rem}
+.feature-card-icon{font-size:1.4rem;margin-bottom:0.45rem}
+.feature-card h3{font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:0.35rem}
+.feature-card p{font-size:0.76rem;color:var(--text2);line-height:1.6;font-family:var(--serif)}
+.faq-wrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:2.5rem}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{padding:0.9rem 1.1rem;font-weight:700;font-size:0.85rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text);transition:background 0.2s}
+.faq-q:hover{background:var(--bg3)}
+.faq-q::after{content:'▾';color:var(--text3);font-size:0.78rem;transition:transform 0.2s;flex-shrink:0;margin-left:1rem}
+.faq-item.open .faq-q::after{transform:rotate(-180deg)}
+.faq-a{display:none;padding:0 1.1rem 0.9rem;font-size:0.82rem;color:var(--text2);line-height:1.7;font-family:var(--serif)}
+.faq-item.open .faq-a{display:block}
+
+/* AD MID SECTION */
+.ad-mid{display:flex;justify-content:center;padding:1.5rem 2rem;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* LEGAL SECTIONS */
+.legal-section{display:none;max-width:800px;margin:0 auto;padding:3rem 2rem}
+.legal-section.active{display:block}
+.legal-section h2{font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:1.5rem;border-bottom:1px solid var(--line);padding-bottom:0.75rem}
+.legal-section h3{font-size:0.9rem;font-weight:700;color:var(--text);margin:1.25rem 0 0.5rem}
+.legal-section p,.legal-section li{font-size:0.85rem;color:var(--text2);line-height:1.8;font-family:var(--serif)}
+.legal-section ul{padding-left:1.25rem;margin:0.5rem 0}
+.legal-section li{margin-bottom:0.25rem}
+.legal-back{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--blue2);cursor:pointer;margin-bottom:1.5rem;background:none;border:none;font-family:var(--syne)}
+.legal-back:hover{color:var(--blue)}
+
+/* FOOTER */
+.site-footer{border-top:1px solid var(--line);padding:2rem;background:var(--bg2)}
+.footer-inner{max-width:960px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-bottom:1.5rem}
+.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text2);margin-bottom:0.65rem}
+.footer-col p,.footer-col a{font-size:0.76rem;color:var(--text3);line-height:1.7;font-family:var(--serif);text-decoration:none;display:block}
+.footer-col a:hover{color:var(--blue2)}
+.footer-bottom{border-top:1px solid var(--line);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+.footer-copy{font-size:0.72rem;color:var(--text3);font-family:var(--mono)}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{font-size:0.72rem;color:var(--text3);text-decoration:none;font-family:var(--mono)}
+.footer-links a:hover{color:var(--blue2)}
+
+@media(max-width:960px){.type-grid{grid-template-columns:repeat(3,1fr)}.app-wrap{grid-template-columns:1fr}.sidebar{border-right:none;border-bottom:1px solid var(--line)}.feature-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.feature-grid{grid-template-columns:1fr}.type-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}}
+@media print{header,.hero,.type-selector-wrap,.sidebar,.toolbar,.seo-wrap,.ad-banner-top,.ad-mid,.site-footer,.ad-sidebar{display:none!important}.main-area{display:block}.preview-area{padding:0;background:white}.puzzle-page{box-shadow:none;margin:0}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#"><span class="logo-icon">⚙</span><span class="logo-text">Puzzle<span>Forge</span></span></a>
+  <div class="header-right">
+    <nav class="header-nav">
+      <a href="#" onclick="showLegal('about');return false;">About</a>
+      <a href="#" onclick="showLegal('privacy');return false;">Privacy</a>
+      <a href="#" onclick="showLegal('disclaimer');return false;">Disclaimer</a>
+      <a href="#" onclick="showLegal('contact');return false;">Contact</a>
+    </nav>
+    <span class="header-badge">100% Free · No Sign-up</span>
+  </div>
+</header>
+
+<!-- TOP AD BANNER -->
+<div class="ad-banner-top">
+  <!-- ADSENSE SLOT 1 — Replace with your AdSense leaderboard code (728x90) -->
+  <div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;">Advertisement · 728×90</div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-eyebrow">Free KDP Puzzle Book Generator</div>
+  <h1>Build <span>Print-Ready Puzzle Books</span><br>for Amazon KDP — Free</h1>
+  <p class="hero-sub">Generate word searches, sudoku, crosswords, scrambles, hangman &amp; mazes. Bulk create up to 50 unique puzzles. Download PDF or PNG instantly — no account required.</p>
+  <div class="hero-features">
+    <span class="hero-pill"><strong>6</strong> Puzzle Types</span>
+    <span class="hero-pill"><strong>Bulk</strong> Generate 1–50</span>
+    <span class="hero-pill"><strong>PDF &amp; PNG</strong> Export</span>
+    <span class="hero-pill"><strong>KDP-Ready</strong> Page Sizes</span>
+    <span class="hero-pill"><strong>Answer Keys</strong> Included</span>
+    <span class="hero-pill"><strong>Free</strong> BookBolt Alternative</span>
+    <span class="hero-pill"><strong>BYOK</strong> AI Word Generation</span>
+  </div>
+  <a class="hero-cta" href="#tool" onclick="document.getElementById('tool').scrollIntoView({behavior:'smooth'});return false;">Start Generating Free →</a>
+</section>
+
+<!-- PUZZLE TYPE SELECTOR -->
+<div class="type-selector-wrap" id="tool">
+  <div class="type-selector-label">Step 1 — Choose Your Puzzle Type</div>
+  <div class="type-grid">
+    <div class="type-card active" onclick="switchTab('wordsearch',this)"><div class="type-icon">🔤</div><div class="type-name">Word Search</div></div>
+    <div class="type-card" onclick="switchTab('scramble',this)"><div class="type-icon">🔀</div><div class="type-name">Scramble</div></div>
+    <div class="type-card" onclick="switchTab('crossword',this)"><div class="type-icon">✏️</div><div class="type-name">Crossword</div></div>
+    <div class="type-card" onclick="switchTab('sudoku',this)"><div class="type-icon">🔢</div><div class="type-name">Sudoku</div></div>
+    <div class="type-card" onclick="switchTab('hangman',this)"><div class="type-icon">🪢</div><div class="type-name">Hangman</div></div>
+    <div class="type-card" onclick="switchTab('maze',this)"><div class="type-icon">🌀</div><div class="type-name">Maze</div></div>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="app-wrap">
+<aside class="sidebar">
+
+  <!-- AI / BYOK PANEL -->
+  <div class="panel" id="aiPanel">
+    <div class="panel-header" onclick="togglePanel('aiPanel')">🤖 AI Word Generation (Optional) <span class="panel-toggle">▾</span></div>
+    <div class="panel-body">
+      <div class="ai-status"><div class="ai-dot" id="aiDot"></div><span class="ai-status-text" id="aiStatusText">No API key — using built-in word bank</span></div>
+      <div>
+        <label>AI Provider</label>
+        <select id="aiProvider" onchange="updateAiProvider()">
+          <option value="">— Select Provider —</option>
+          <option value="gemini">Google Gemini (free tier available)</option>
+          <option value="openai">OpenAI (GPT-4o mini)</option>
+          <option value="anthropic">Anthropic Claude</option>
+          <option value="cohere">Cohere</option>
+          <option value="mistral">Mistral</option>
+        </select>
+      </div>
+      <div id="apiKeyWrap" style="display:none">
+        <label>Your API Key <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text3)">(session only — never stored)</span></label>
+        <input type="password" id="apiKey" placeholder="Paste your API key here" oninput="updateAiStatus()">
+      </div>
+      <div id="aiTopicWrap" style="display:none">
+        <label>Topic / Theme (optional)</label>
+        <input type="text" id="aiTopic" placeholder="e.g. Ocean Animals, Space, Christmas...">
+      </div>
+      <button class="ai-generate-btn" id="aiGenerateBtn" onclick="generateWithAI()">✨ Generate Words with AI</button>
+      <p class="api-notice">Your API key is stored in memory only and permanently deleted when you close or refresh this tab. You are solely responsible for your own API usage and any associated costs with your chosen provider.</p>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="panel">
+    <div class="panel-header" onclick="togglePanel(this.parentElement)">⚙ Step 2 — Settings <span class="panel-toggle">▾</span></div>
+    <div class="panel-body">
+      <div><label>Page Size</label>
+        <select id="pageSize"><option value="letter">8.5 × 11 in (Letter / KDP)</option><option value="6x9">6 × 9 in (KDP Digest)</option><option value="5x8">5 × 8 in (KDP Small)</option></select></div>
+      <div><label>Puzzle Title</label><input type="text" id="puzzleTitle" placeholder="e.g. Animals Word Search"></div>
+      <div class="settings-section active" id="sec-wordsearch">
+        <div class="row2">
+          <div><label>Grid Size</label><select id="gridSize"><option value="15">15×15</option><option value="20" selected>20×20</option><option value="25">25×25</option></select></div>
+          <div><label>Directions</label><select id="directions"><option value="4">4 — Easy</option><option value="6">6 — Med</option><option value="8" selected>8 — Hard</option></select></div>
+        </div>
+        <div><label>Fill Style</label><select id="fillType"><option value="random">Random Letters</option><option value="dots">Dots (·)</option></select></div>
+      </div>
+      <div class="settings-section" id="sec-scramble">
+        <div><label>Words per Puzzle</label><input type="number" id="scrambleCount" value="20" min="5" max="40"></div>
+      </div>
+      <div class="settings-section" id="sec-crossword">
+        <div class="row2">
+          <div><label>Grid Size</label><select id="cwGridSize"><option value="13">13×13</option><option value="15" selected>15×15</option></select></div>
+          <div><label>Max Words</label><input type="number" id="cwMaxWords" value="20" min="5" max="30"></div>
+        </div>
+      </div>
+      <div class="settings-section" id="sec-sudoku">
+        <div><label>Difficulty</label><select id="sudokuDiff"><option value="easy">Easy (45 givens)</option><option value="medium" selected>Medium (35 givens)</option><option value="hard">Hard (27 givens)</option><option value="expert">Expert (22 givens)</option></select></div>
+      </div>
+      <div class="settings-section" id="sec-hangman">
+        <div><label>Wrong Guesses Allowed</label><select id="hangmanGuesses"><option value="6" selected>6 (standard)</option><option value="8">8 (easier)</option><option value="5">5 (harder)</option></select></div>
+      </div>
+      <div class="settings-section" id="sec-maze">
+        <div class="row2">
+          <div><label>Maze Size</label><select id="mazeSize"><option value="10">10×10 Easy</option><option value="15" selected>15×15 Med</option><option value="20">20×20 Hard</option><option value="25">25×25 Expert</option></select></div>
+          <div><label>Style</label><select id="mazeStyle"><option value="perfect">Perfect</option><option value="braid">Braid</option></select></div>
+        </div>
+      </div>
+      <div><label>Options</label>
+        <div class="check-group">
+          <label class="check-pill checked" id="pill-showWords"><input type="checkbox" id="showWords" checked onchange="togglePill('pill-showWords','showWords')">Word List</label>
+          <label class="check-pill checked" id="pill-answerKey"><input type="checkbox" id="answerKey" checked onchange="togglePill('pill-answerKey','answerKey')">Answer Key</label>
+          <label class="check-pill" id="pill-puzzleNumber"><input type="checkbox" id="puzzleNumber" onchange="togglePill('pill-puzzleNumber','puzzleNumber')">Show #</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORDS -->
+  <div class="panel" id="wordPanel">
+    <div class="panel-header" onclick="togglePanel(this.parentElement)">📚 Step 3 — Words <span class="word-count-badge" id="wordCountBadge">0 words</span><span class="panel-toggle">▾</span></div>
+    <div class="panel-body">
+      <div><label>Custom Words (one per line or comma-separated)</label>
+        <textarea id="customWords" placeholder="ELEPHANT&#10;GIRAFFE&#10;LION&#10;TIGER&#10;..." oninput="updateWordCount()"></textarea></div>
+      <div style="display:flex;gap:0.38rem">
+        <button class="btn btn-secondary btn-sm" onclick="clearWords()">Clear</button>
+        <button class="btn btn-secondary btn-sm" onclick="shuffleWords()">Shuffle</button>
+      </div>
+      <div><label>— or pick a category —</label><div class="category-grid" id="categoryGrid"></div></div>
+    </div>
+  </div>
+
+  <!-- GENERATE -->
+  <div class="panel">
+    <div class="panel-header" onclick="togglePanel(this.parentElement)">⚡ Step 4 — Generate <span class="panel-toggle">▾</span></div>
+    <div class="panel-body">
+      <div><label>Number of Puzzles</label>
+        <div class="bulk-count">
+          <button onclick="adjustCount(-1)">−</button>
+          <input type="number" id="bulkCount" value="1" min="1" max="50" style="width:48px;text-align:center">
+          <button onclick="adjustCount(1)">+</button>
+          <span style="font-size:0.68rem;color:var(--text3);margin-left:0.3rem">max 50</span>
+        </div>
+      </div>
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-label" id="progressLabel">Generating…</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+      </div>
+      <button class="btn btn-primary" onclick="generateBulk()">⚡ Generate Puzzles</button>
+    </div>
+  </div>
+
+  <!-- EXPORT -->
+  <div class="panel">
+    <div class="panel-header" onclick="togglePanel(this.parentElement)">📥 Step 5 — Download <span class="panel-toggle">▾</span></div>
+    <div class="panel-body">
+      <div class="export-grid">
+        <button class="btn-export" onclick="exportPDF()"><span class="export-icon">📄</span><span>Save PDF</span><span class="export-desc">Print-ready · KDP upload</span></button>
+        <button class="btn-export" onclick="exportPNG()"><span class="export-icon">🖼</span><span>Save PNG</span><span class="export-desc">Image · current page</span></button>
+      </div>
+      <button class="btn btn-secondary" style="width:100%;font-size:0.7rem;margin-top:0.2rem" onclick="window.print()">🖨 Print Direct</button>
+    </div>
+  </div>
+
+  <!-- SIDEBAR AD -->
+  <div class="ad-sidebar">
+    <!-- ADSENSE SLOT 2 — Replace with your AdSense rectangle code (300x250) -->
+    <div class="ad-placeholder" style="width:100%;height:250px;">Advertisement · 300×250</div>
+  </div>
+
+</aside>
+
+<main class="main-area">
+  <div class="toolbar">
+    <div class="toolbar-title">Preview <span id="previewMeta"></span></div>
+    <div class="puzzle-nav" id="puzzleNav">
+      <button class="nav-btn" id="navPrev" onclick="navPuzzle(-1)">‹</button>
+      <span class="nav-label" id="navLabel">1 / 1</span>
+      <button class="nav-btn" id="navNext" onclick="navPuzzle(1)">›</button>
+    </div>
+    <button class="btn btn-secondary btn-sm" id="regenBtn" style="display:none" onclick="generateBulk()">↻ Regen</button>
+  </div>
+  <div class="preview-area" id="previewArea">
+    <div class="empty-state"><div class="empty-icon">⚙</div><div class="empty-title">Your puzzle will appear here</div><div class="empty-sub">Follow steps 1–4 in the sidebar to generate your first puzzle.</div></div>
+  </div>
+</main>
+</div>
+
+<!-- MID AD -->
+<div class="ad-mid">
+  <!-- ADSENSE SLOT 3 — Replace with your AdSense leaderboard code (728x90) -->
+  <div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;">Advertisement · 728×90</div>
+</div>
+
+<!-- SEO CONTENT -->
+<div class="seo-wrap" id="mainContent">
+<div class="seo-inner">
+  <h2>The <span>Free Alternative</span> to BookBolt &amp; Paid Puzzle Tools</h2>
+  <div class="feature-grid">
+    <div class="feature-card"><div class="feature-card-icon">📚</div><h3>Built for KDP Publishers</h3><p>Every puzzle exports at exact Amazon KDP page sizes — 8.5×11, 6×9, and 5×8 inches. Download a print-ready PDF and upload directly to KDP Paperback.</p></div>
+    <div class="feature-card"><div class="feature-card-icon">⚡</div><h3>Bulk Generate Up to 50</h3><p>Create an entire 50-puzzle book in seconds. Every puzzle is algorithmically unique. Answer keys generate automatically and sort to the back of the PDF.</p></div>
+    <div class="feature-card"><div class="feature-card-icon">💰</div><h3>Completely Free</h3><p>No subscription, no watermarks, no account required. PuzzleForge is 100% free for personal and commercial KDP publishing use.</p></div>
+    <div class="feature-card"><div class="feature-card-icon">🤖</div><h3>Bring Your Own AI Key</h3><p>Connect your own API key from Gemini, OpenAI, Claude, Cohere or Mistral for unlimited AI-generated word lists and puzzle clues. Your key is never stored.</p></div>
+    <div class="feature-card"><div class="feature-card-icon">📥</div><h3>PDF &amp; PNG Export</h3><p>Save puzzles as print-ready PDFs for KDP upload, or PNG images for social media, Canva, or design tools. No watermarks on any export.</p></div>
+    <div class="feature-card"><div class="feature-card-icon">🗂</div><h3>600+ Built-in Words</h3><p>Choose from 20 curated categories — animals, space, sports, holidays and more — or paste your own lists. No AI key needed for the built-in bank.</p></div>
+  </div>
+
+  <h2 style="margin-bottom:1rem">Frequently Asked <span>Questions</span></h2>
+  <div class="faq-wrap" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">Is PuzzleForge really free for KDP publishing?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">Yes — 100% free with no watermarks, no account, and no restrictions on commercial use. You can publish puzzles generated here on Amazon KDP or anywhere else.</span></div></div>
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">How do I save my puzzles as a PDF for KDP?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">Click "Save PDF" after generating. A clean print window opens — in Chrome or Edge choose "Save as PDF" as the printer. The PDF saves at the exact KDP page size you selected.</span></div></div>
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">How does the AI word generation work?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">PuzzleForge uses a Bring Your Own Key (BYOK) model. You supply your own API key from a provider like Google Gemini, OpenAI, or Anthropic Claude. Your key is stored only in your browser's memory for the current session and is permanently deleted when you close or refresh the tab. You are responsible for your own API usage and costs. If you don't have a key, the built-in word bank works great.</span></div></div>
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">How many puzzles can I generate at once?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">Up to 50 unique puzzles per session. All export in one PDF with answer keys at the back — ready for KDP upload.</span></div></div>
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">What KDP page sizes does PuzzleForge support?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">8.5×11 inch (standard letter), 6×9 inch (digest — most popular for activity books), and 5×8 inch (small format). Select before generating.</span></div></div>
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">How is PuzzleForge different from BookBolt?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">BookBolt is a paid subscription. PuzzleForge is completely free with no subscription and no watermarks. PuzzleForge runs entirely in your browser — nothing is sent to our servers and your content stays private on your device.</span></div></div>
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">Do I need an account to use PuzzleForge?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">No account required. Open the page, configure your puzzle, and generate. No email, no sign-up, no login.</span></div></div>
+    <div class="faq-item" itemscope itemtype="https://schema.org/Question"><div class="faq-q" onclick="toggleFaq(this)" itemprop="name">Can I use my own word lists?</div><div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer"><span itemprop="text">Absolutely. Paste any words into the custom word box, one per line or comma-separated. Or choose from 20 built-in categories with 600+ curated words. Mix both if you like.</span></div></div>
+  </div>
+</div>
+</div>
+
+<!-- LEGAL SECTIONS (hidden, shown on nav click) -->
+<div id="legalWrap" style="display:none;background:var(--bg2);border-top:1px solid var(--line);">
+
+  <div class="legal-section" id="legal-about">
+    <button class="legal-back" onclick="hideLegal()">← Back to PuzzleForge</button>
+    <h2>About PuzzleForge</h2>
+    <p>PuzzleForge is a free, browser-based puzzle generator built for Amazon KDP publishers, educators, and puzzle enthusiasts. It was created as a completely free alternative to paid tools like BookBolt, allowing anyone to create professional-quality puzzle books for print-on-demand publishing without a subscription.</p>
+    <h3>What We Build</h3>
+    <p>PuzzleForge generates six puzzle types — word search, word scramble, crossword, sudoku, hangman, and maze — with full answer keys, bulk generation up to 50 puzzles per session, and export to print-ready PDF or PNG at standard KDP page sizes.</p>
+    <h3>How It Works</h3>
+    <p>Everything runs entirely in your browser. No puzzle data, words, or API keys are ever sent to our servers. When you close the tab, everything is gone. We do not collect, store, or sell any user data.</p>
+    <h3>AI Integration</h3>
+    <p>PuzzleForge offers optional AI-powered word and clue generation through a Bring Your Own Key (BYOK) model. Users supply their own API keys from providers like Google Gemini, OpenAI, or Anthropic Claude. PuzzleForge never stores or transmits these keys.</p>
+    <h3>Contact</h3>
+    <p>For questions or feedback, please use the contact information on the <a href="#" onclick="showLegal('contact');return false;" style="color:var(--blue2)">Contact page</a>.</p>
+  </div>
+
+  <div class="legal-section" id="legal-privacy">
+    <button class="legal-back" onclick="hideLegal()">← Back to PuzzleForge</button>
+    <h2>Privacy Policy</h2>
+    <p><strong>Last updated: 2026</strong></p>
+    <p>PuzzleForge ("we", "us", "our") operates the website the-puzzle-forge.org. This Privacy Policy explains how we handle information when you use our service.</p>
+    <h3>Information We Do Not Collect</h3>
+    <p>PuzzleForge does not collect, store, or transmit any personally identifiable information. The puzzle tool runs entirely in your browser. Word lists, custom text, puzzle settings, and API keys are never sent to our servers.</p>
+    <h3>API Keys</h3>
+    <p>If you choose to use the optional AI word generation feature, your API key is stored only in your browser's active memory (a JavaScript variable) for the duration of your current session. It is never written to disk, sent to our servers, logged, or retained in any form. When you close or refresh the tab, the key is permanently deleted.</p>
+    <h3>Google AdSense</h3>
+    <p>This website may display advertisements served by Google AdSense. Google may use cookies to serve ads based on your prior visits to this or other websites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--blue2)">Google Ads Settings</a>. We do not control the data practices of Google AdSense.</p>
+    <h3>Cookies</h3>
+    <p>PuzzleForge itself does not use cookies. Google AdSense may set cookies as part of ad delivery. See Google's privacy policy for details.</p>
+    <h3>Analytics</h3>
+    <p>We may use Google Analytics or similar tools to understand aggregate site usage. This data is anonymous and does not identify individual users.</p>
+    <h3>Third-Party Links</h3>
+    <p>This site may contain links to third-party websites including AI provider documentation. We are not responsible for the privacy practices of those sites.</p>
+    <h3>Children's Privacy</h3>
+    <p>PuzzleForge does not knowingly collect information from children under 13. If you believe a child has provided personal information, please contact us.</p>
+    <h3>Changes to This Policy</h3>
+    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date.</p>
+    <h3>Contact</h3>
+    <p>For privacy questions, see our <a href="#" onclick="showLegal('contact');return false;" style="color:var(--blue2)">Contact page</a>.</p>
+  </div>
+
+  <div class="legal-section" id="legal-disclaimer">
+    <button class="legal-back" onclick="hideLegal()">← Back to PuzzleForge</button>
+    <h2>Disclaimer</h2>
+    <p><strong>Last updated: 2026</strong></p>
+    <h3>General Use</h3>
+    <p>PuzzleForge is provided "as is" without warranty of any kind, express or implied. We make no guarantees regarding the accuracy, completeness, or suitability of puzzles generated by this tool for any particular purpose.</p>
+    <h3>KDP and Publishing</h3>
+    <p>PuzzleForge is an independent tool and is not affiliated with, endorsed by, or in any way officially connected with Amazon, Kindle Direct Publishing (KDP), or any other publishing platform. It is your responsibility to ensure that any content you publish complies with the terms of service of your chosen publishing platform.</p>
+    <h3>AI-Generated Content</h3>
+    <p>When using the optional BYOK AI feature, you are solely responsible for your use of third-party AI APIs, including any associated costs, terms of service compliance, and the quality or appropriateness of AI-generated content. PuzzleForge does not control, verify, or take responsibility for AI-generated output.</p>
+    <h3>API Usage Costs</h3>
+    <p>PuzzleForge does not pay for or subsidize any AI API usage. When you provide your own API key, you are solely responsible for all charges incurred through your chosen provider. Always review your provider's pricing before use.</p>
+    <h3>No Guarantees of Uptime</h3>
+    <p>While we aim to keep PuzzleForge available at all times, we do not guarantee uninterrupted access. The service may be unavailable due to maintenance, technical issues, or factors outside our control.</p>
+    <h3>Limitation of Liability</h3>
+    <p>In no event shall PuzzleForge be liable for any direct, indirect, incidental, special, or consequential damages arising from the use or inability to use this service.</p>
+  </div>
+
+  <div class="legal-section" id="legal-contact">
+    <button class="legal-back" onclick="hideLegal()">← Back to PuzzleForge</button>
+    <h2>Contact</h2>
+    <p>PuzzleForge is a free tool maintained independently. We welcome feedback, bug reports, and suggestions.</p>
+    <h3>Email</h3>
+    <p><a href="mailto:hello@the-puzzle-forge.org" style="color:var(--blue2)">hello@the-puzzle-forge.org</a></p>
+    <h3>Response Time</h3>
+    <p>We aim to respond to all inquiries within 3–5 business days. As a free, independently run tool, we appreciate your patience.</p>
+    <h3>Bug Reports</h3>
+    <p>If you encounter a bug or a puzzle that generates incorrectly, please describe the puzzle type, settings used, and what happened. Screenshots are helpful.</p>
+    <h3>Feature Requests</h3>
+    <p>We love hearing what puzzle types, export formats, or features would make PuzzleForge more useful for your KDP publishing workflow.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PuzzleForge</h4>
+        <p>Free KDP puzzle book generator. Create word searches, sudoku, crosswords, scrambles, hangman and mazes for Amazon print-on-demand publishing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Puzzle Types</h4>
+        <a href="#" onclick="switchTabAndScroll('wordsearch');return false;">Word Search Generator</a>
+        <a href="#" onclick="switchTabAndScroll('scramble');return false;">Word Scramble Generator</a>
+        <a href="#" onclick="switchTabAndScroll('crossword');return false;">Crossword Generator</a>
+        <a href="#" onclick="switchTabAndScroll('sudoku');return false;">Sudoku Generator</a>
+        <a href="#" onclick="switchTabAndScroll('hangman');return false;">Hangman Generator</a>
+        <a href="#" onclick="switchTabAndScroll('maze');return false;">Maze Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <a href="#" onclick="showLegal('about');return false;">About PuzzleForge</a>
+        <a href="#" onclick="showLegal('privacy');return false;">Privacy Policy</a>
+        <a href="#" onclick="showLegal('disclaimer');return false;">Disclaimer</a>
+        <a href="#" onclick="showLegal('contact');return false;">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 PuzzleForge · Free KDP Puzzle Book Generator · Not affiliated with Amazon or KDP</span>
+      <div class="footer-links">
+        <a href="#" onclick="showLegal('privacy');return false;">Privacy</a>
+        <a href="#" onclick="showLegal('disclaimer');return false;">Disclaimer</a>
+        <a href="#" onclick="showLegal('contact');return false;">Contact</a>
+        <a href="#top">↑ Top</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════
+// WORD BANK
+// ═══════════════════════════════════════════
+const WORD_BANK = {
+  "🐾 Animals":    ["LION","TIGER","BEAR","WOLF","DEER","MOOSE","ELEPHANT","GIRAFFE","ZEBRA","HIPPO","RHINO","GORILLA","MONKEY","PANDA","KOALA","KANGAROO","CHEETAH","LEOPARD","JAGUAR","PANTHER","BUFFALO","ANTELOPE","GAZELLE","CAMEL","LLAMA","BISON","MEERKAT","WARTHOG","BABOON","HYENA","WILDEBEEST","AARDVARK","CAPYBARA","TAPIR","OCELOT","COUGAR","WOLVERINE","ARMADILLO","PLATYPUS","WOMBAT"],
+  "🐶 Pets":       ["DOG","CAT","RABBIT","HAMSTER","TURTLE","PARROT","CANARY","GOLDFISH","FERRET","GECKO","IGUANA","CHINCHILLA","HEDGEHOG","BUDGIE","COCKATIEL","PARAKEET","PUPPY","KITTEN","GERBIL","PYTHON","CHAMELEON","TORTOISE","FINCH","DOVE","LOVEBIRD","DEGU","BEAGLE","LABRADOR","POODLE","BULLDOG"],
+  "🦅 Birds":      ["EAGLE","HAWK","OWL","ROBIN","SPARROW","CARDINAL","BLUEJAY","CROW","RAVEN","FINCH","WREN","DOVE","PIGEON","SWAN","PELICAN","FLAMINGO","OSTRICH","PEACOCK","PARROT","TOUCAN","MACAW","COCKATOO","HERON","CRANE","STORK","ALBATROSS","FALCON","CONDOR","VULTURE","MAGPIE","KINGFISHER","WOODPECKER","SWALLOW","NIGHTINGALE","WARBLER"],
+  "🐠 Ocean":      ["SHARK","WHALE","DOLPHIN","SEAL","OCTOPUS","SQUID","CRAB","LOBSTER","STARFISH","JELLYFISH","SEAHORSE","SWORDFISH","TUNA","SALMON","CLOWNFISH","BARRACUDA","MANTA","STINGRAY","ORCA","NARWHAL","WALRUS","MANATEE","CLAM","OYSTER","CORAL","ANCHOVY","SARDINE","HALIBUT","SNAPPER","GROUPER"],
+  "🍎 Fruits":     ["APPLE","ORANGE","BANANA","GRAPE","CHERRY","PEACH","PEAR","PLUM","MANGO","KIWI","PAPAYA","COCONUT","AVOCADO","APRICOT","LEMON","LIME","MELON","STRAWBERRY","BLUEBERRY","RASPBERRY","BLACKBERRY","CRANBERRY","PINEAPPLE","GUAVA","LYCHEE","PERSIMMON","POMELO","TANGERINE","NECTARINE","POMEGRANATE"],
+  "🥦 Vegetables": ["CARROT","POTATO","TOMATO","BROCCOLI","SPINACH","LETTUCE","ONION","GARLIC","PEPPER","CELERY","CUCUMBER","RADISH","TURNIP","BEET","CORN","PEAS","BEANS","ASPARAGUS","EGGPLANT","ZUCCHINI","ARTICHOKE","CABBAGE","KALE","LEEK","MUSHROOM","SQUASH","PUMPKIN","PARSNIP","FENNEL","CAULIFLOWER"],
+  "🌳 Nature":     ["MOUNTAIN","FOREST","RIVER","OCEAN","DESERT","VALLEY","GLACIER","CANYON","MEADOW","SWAMP","TUNDRA","VOLCANO","WATERFALL","LAGOON","PLATEAU","PENINSULA","ISLAND","REEF","PRAIRIE","SAVANNA","JUNGLE","RAINFOREST","MARSH","DELTA","FJORD","DUNE","GROVE","BROOK","CLIFF","CAVERN"],
+  "🌤 Weather":    ["THUNDER","LIGHTNING","RAINBOW","TORNADO","BLIZZARD","HURRICANE","SUNSHINE","RAINFALL","SNOWFALL","HAILSTORM","FOGGY","CLOUDY","WINDY","DRIZZLE","FROST","HEATWAVE","MONSOON","CYCLONE","AVALANCHE","DROUGHT","BREEZE","OVERCAST","SLEET","TYPHOON","SANDSTORM","MIST","SQUALL","GALE","FLURRY","HAZE"],
+  "🌎 Countries":  ["BRAZIL","CANADA","FRANCE","GERMANY","JAPAN","CHINA","INDIA","MEXICO","ITALY","SPAIN","RUSSIA","EGYPT","KENYA","NIGERIA","GHANA","PERU","CHILE","TURKEY","GREECE","SWEDEN","NORWAY","DENMARK","FINLAND","AUSTRIA","BELGIUM","PORTUGAL","POLAND","UKRAINE","VIETNAM","THAILAND"],
+  "⚽ Sports":     ["SOCCER","BASEBALL","BASKETBALL","FOOTBALL","TENNIS","HOCKEY","GOLF","SWIMMING","VOLLEYBALL","WRESTLING","BOXING","CYCLING","RUNNING","SKIING","SURFING","ARCHERY","FENCING","ROWING","DIVING","GYMNASTICS","SOFTBALL","LACROSSE","RUGBY","CRICKET","BADMINTON","TRIATHLON","CURLING","JUDO","KARATE","SKATING"],
+  "🎵 Music":      ["GUITAR","PIANO","VIOLIN","TRUMPET","FLUTE","DRUMS","BASS","CELLO","HARP","TROMBONE","CLARINET","OBOE","SAXOPHONE","BANJO","MANDOLIN","ACCORDION","UKULELE","ORGAN","KEYBOARD","HARMONICA","MELODY","RHYTHM","HARMONY","TEMPO","CHORD","OCTAVE","TREBLE","SOPRANO","TENOR","CONDUCTOR"],
+  "🔬 Science":    ["ATOM","CELL","GRAVITY","MOLECULE","ENERGY","ELECTRON","PROTON","NEUTRON","CATALYST","REACTION","ELEMENT","COMPOUND","SOLUTION","MIXTURE","CRYSTAL","MAGNET","CIRCUIT","VOLTAGE","FREQUENCY","DENSITY","PHOTON","NUCLEUS","ENZYME","PROTEIN","GENOME","BACTERIA","VIRUS","OSMOSIS","DIFFUSION","ENTROPY"],
+  "🚀 Space":      ["PLANET","GALAXY","COMET","ASTEROID","NEBULA","METEOR","SATELLITE","ROCKET","ASTRONAUT","UNIVERSE","COSMOS","ORBIT","TELESCOPE","GRAVITY","STAR","SUPERNOVA","BLACKHOLE","QUASAR","PULSAR","ECLIPSE","CONSTELLATION","ATMOSPHERE","SPACECRAFT","WORMHOLE","ZENITH","APOGEE","SOLSTICE","EQUINOX","AURORA","CORONA"],
+  "🏛 History":    ["PYRAMID","EMPEROR","PHARAOH","GLADIATOR","WARRIOR","KNIGHT","CASTLE","FORTRESS","EMPIRE","REPUBLIC","DYNASTY","REVOLUTION","MEDIEVAL","ANCIENT","CONQUEST","DISCOVERY","EXPLORER","COLONY","TREATY","ALLIANCE","CRUSADE","RENAISSANCE","REFORMATION","ENLIGHTENMENT","INDUSTRIAL","DEMOCRACY","MONARCHY","FEUDALISM","ARISTOCRACY","ARCHAEOLOGY"],
+  "🎨 Colors":     ["CRIMSON","SCARLET","INDIGO","VIOLET","TURQUOISE","MAGENTA","LAVENDER","MAROON","TEAL","CORAL","AMBER","JADE","IVORY","EBONY","COBALT","FUCHSIA","AZURE","OCHRE","SIENNA","VERMILLION","CHARTREUSE","CERISE","PERIWINKLE","MAUVE","UMBER","SAFFRON","TANGERINE","AQUAMARINE","CHAMPAGNE","ALABASTER"],
+  "💼 Jobs":       ["DOCTOR","TEACHER","LAWYER","ENGINEER","NURSE","FARMER","PILOT","CHEF","ARTIST","WRITER","BUILDER","PLUMBER","SOLDIER","SAILOR","LIBRARIAN","JUDGE","MAYOR","SENATOR","RANGER","DETECTIVE","SURGEON","ARCHITECT","BIOLOGIST","CHEMIST","PHYSICIST","ASTRONOMER","GEOLOGIST","BOTANIST","ACCOUNTANT","PROGRAMMER"],
+  "🎃 Holidays":   ["CHRISTMAS","HALLOWEEN","THANKSGIVING","EASTER","VALENTINE","HANUKKAH","DIWALI","KWANZAA","CARNIVAL","FESTIVAL","BIRTHDAY","ANNIVERSARY","PARADE","FIREWORKS","TRADITION","CELEBRATE","LANTERN","WREATH","CANDLE","TURKEY","PUMPKIN","COSTUME","DECORATION","ORNAMENT","MISTLETOE","MENORAH","DREIDEL","RESOLUTION","CONFETTI","CHAMPAGNE"],
+  "🏠 Home":       ["KITCHEN","BEDROOM","BATHROOM","LIVING","DINING","GARAGE","BASEMENT","ATTIC","HALLWAY","GARDEN","PORCH","BALCONY","CHIMNEY","CEILING","CABINET","CUSHION","BLANKET","CURTAIN","PILLOW","APPLIANCE","FIREPLACE","DOORBELL","THRESHOLD","WINDOWSILL","STAIRCASE","PANTRY","LAUNDRY","CORRIDOR","VESTIBULE","CONSERVATORY"],
+  "🧠 School":     ["ALGEBRA","HISTORY","SCIENCE","ENGLISH","GEOGRAPHY","BIOLOGY","CHEMISTRY","PHYSICS","GRAMMAR","SPELLING","READING","WRITING","ARITHMETIC","LIBRARY","CLASSROOM","NOTEBOOK","PENCIL","CALENDAR","HOMEWORK","DIPLOMA","LITERATURE","PHILOSOPHY","PSYCHOLOGY","SOCIOLOGY","ECONOMICS","STATISTICS","CALCULUS","GEOMETRY","LINGUISTICS","ANTHROPOLOGY"],
+  "🚀 Space Tech": ["BOOSTER","PAYLOAD","LAUNCHPAD","THRUSTER","MODULE","CAPSULE","DOCKING","HATCH","AIRLOCK","ANTENNA","SENSOR","COMPUTER","FUEL","OXYGEN","PRESSURE","THERMAL","RADIATION","NAVIGATION","TELEMETRY","REENTRY"],
+};
+
+// ═══════════════════════════════════════════
+// HANGMAN CLUE DATABASE
+// ═══════════════════════════════════════════
+const HANGMAN_DB = {
+  ELEPHANT:      {clue:"The largest land animal, known for its long trunk and large ears"},
+  GIRAFFE:       {clue:"The tallest animal on Earth, with an incredibly long neck"},
+  PENGUIN:       {clue:"A flightless bird that lives in cold climates and waddles when it walks"},
+  DOLPHIN:       {clue:"A highly intelligent marine mammal known for playful behavior"},
+  CROCODILE:     {clue:"A large reptile with powerful jaws that lives near rivers and swamps"},
+  KANGAROO:      {clue:"An Australian marsupial that carries its young in a pouch"},
+  CHEETAH:       {clue:"The fastest land animal, capable of speeds over 70 mph"},
+  GORILLA:       {clue:"The largest primate, closely related to humans"},
+  FLAMINGO:      {clue:"A pink wading bird that often stands on one leg"},
+  PORCUPINE:     {clue:"A rodent covered in sharp, hollow quills for defense"},
+  CHAMELEON:     {clue:"A lizard famous for changing its skin color"},
+  ARMADILLO:     {clue:"A mammal covered in a hard, bony shell of armor"},
+  PLATYPUS:      {clue:"An egg-laying mammal with a duck-like bill and beaver tail"},
+  WOLVERINE:     {clue:"A ferocious mustelid known for strength far beyond its size"},
+  CAPYBARA:      {clue:"The world's largest rodent, native to South America"},
+  MOUNTAIN:      {clue:"A large natural elevation of Earth's surface rising abruptly"},
+  VOLCANO:       {clue:"A mountain that can erupt with lava, ash, and hot gases"},
+  PENINSULA:     {clue:"A piece of land almost surrounded by water on three sides"},
+  ARCHIPELAGO:   {clue:"A chain or group of islands scattered across a body of water"},
+  SAVANNA:       {clue:"A flat grassland in tropical regions with few trees"},
+  GLACIER:       {clue:"A slow-moving mass of ice formed from compacted snow"},
+  ESTUARY:       {clue:"Where a river meets the sea and fresh and salt water mix"},
+  CANYON:        {clue:"A deep gorge typically carved by a river over millions of years"},
+  PLATEAU:       {clue:"A flat-topped area of high ground rising steeply from lower land"},
+  TUNDRA:        {clue:"A vast flat Arctic region with permanently frozen subsoil"},
+  RAINFOREST:    {clue:"A dense tropical forest with very high annual rainfall"},
+  WATERSHED:     {clue:"An area of land that drains all water into a common river or lake"},
+  PHOTOSYNTHESIS:{clue:"The process plants use to convert sunlight and CO2 into food and oxygen"},
+  MOLECULE:      {clue:"The smallest unit of a chemical compound that can take part in a reaction"},
+  TELESCOPE:     {clue:"An instrument that makes distant objects appear closer and larger"},
+  SATELLITE:     {clue:"An object that orbits a planet, either natural like the Moon or man-made"},
+  LABORATORY:    {clue:"A room equipped for scientific experiments and research"},
+  EXPERIMENT:    {clue:"A scientific procedure carried out to test a hypothesis"},
+  HYPOTHESIS:    {clue:"A proposed explanation for something that must be tested"},
+  ELECTRICITY:   {clue:"A form of energy produced by charged particles in motion"},
+  MAGNETISM:     {clue:"A force of attraction or repulsion between certain materials"},
+  EVAPORATION:   {clue:"The process by which liquid turns into vapor or gas"},
+  VOLLEYBALL:    {clue:"A team sport played by hitting a ball over a net with your hands"},
+  GYMNASTICS:    {clue:"A sport involving exercises requiring balance, strength, and flexibility"},
+  BADMINTON:     {clue:"A racket sport played with a shuttlecock over a high net"},
+  WRESTLING:     {clue:"A combat sport where opponents try to pin each other to the ground"},
+  BASKETBALL:    {clue:"A sport where players shoot a ball through an elevated hoop"},
+  TRIATHLON:     {clue:"An endurance race combining swimming, cycling, and running"},
+  SWIMMING:      {clue:"Moving through water using the arms and legs"},
+  ARCHERY:       {clue:"The sport or skill of shooting arrows with a bow"},
+  FENCING:       {clue:"A combat sport using swords with points scored by touching opponents"},
+  BOBSLED:       {clue:"A winter sport where teams race down an icy track in a sled"},
+  CHOCOLATE:     {clue:"A sweet food made from roasted cacao beans"},
+  STRAWBERRY:    {clue:"A bright red fruit with tiny seeds on its surface"},
+  PINEAPPLE:     {clue:"A tropical fruit with a spiky exterior and sweet yellow flesh"},
+  AVOCADO:       {clue:"A creamy green fruit commonly used to make guacamole"},
+  RASPBERRY:     {clue:"A small, soft red berry that grows on thorny canes"},
+  BLUEBERRY:     {clue:"A small, sweet dark-blue berry that grows in clusters"},
+  WATERMELON:    {clue:"A large fruit with green rind and sweet red or yellow flesh"},
+  POMEGRANATE:   {clue:"A fruit with a tough red rind and hundreds of jewel-like seeds"},
+  ARTICHOKE:     {clue:"A vegetable made up of overlapping fleshy leaves with an edible heart"},
+  ASPARAGUS:     {clue:"A vegetable with long edible green or white stalks"},
+  CONSTELLATION: {clue:"A group of stars forming a recognizable pattern in the night sky"},
+  SUPERNOVA:     {clue:"A massive stellar explosion that briefly outshines an entire galaxy"},
+  ASTRONAUT:     {clue:"A person trained to travel and work in outer space"},
+  BLACKHOLE:     {clue:"A region of spacetime with gravity so strong nothing can escape it"},
+  METEORITE:     {clue:"A piece of rock or metal from space that survives landing on Earth"},
+  NEBULA:        {clue:"A cloud of gas and dust in space where new stars are born"},
+  SPACECRAFT:    {clue:"A vehicle designed to travel and operate in outer space"},
+  UNIVERSE:      {clue:"All of space, time, matter, and energy — everything that exists"},
+};
+
+const HANGMAN_WORDS = {
+  Animals:   ["ELEPHANT","GIRAFFE","PENGUIN","DOLPHIN","CROCODILE","KANGAROO","CHEETAH","GORILLA","FLAMINGO","PORCUPINE","CHAMELEON","ARMADILLO","PLATYPUS","WOLVERINE","CAPYBARA"],
+  Geography: ["MOUNTAIN","VOLCANO","PENINSULA","ARCHIPELAGO","SAVANNA","GLACIER","ESTUARY","CANYON","PLATEAU","TUNDRA","RAINFOREST","WATERSHED"],
+  Science:   ["PHOTOSYNTHESIS","MOLECULE","TELESCOPE","SATELLITE","LABORATORY","EXPERIMENT","HYPOTHESIS","ELECTRICITY","MAGNETISM","EVAPORATION"],
+  Sports:    ["VOLLEYBALL","GYMNASTICS","BADMINTON","WRESTLING","BASKETBALL","TRIATHLON","SWIMMING","ARCHERY","FENCING","BOBSLED"],
+  Food:      ["CHOCOLATE","STRAWBERRY","PINEAPPLE","AVOCADO","RASPBERRY","BLUEBERRY","WATERMELON","POMEGRANATE","ARTICHOKE","ASPARAGUS"],
+  Space:     ["CONSTELLATION","SUPERNOVA","TELESCOPE","ASTRONAUT","BLACKHOLE","SATELLITE","METEORITE","NEBULA","SPACECRAFT","UNIVERSE"],
+};
+
+// ═══════════════════════════════════════════
+// AI PROVIDER CONFIGS
+// ═══════════════════════════════════════════
+const AI_PROVIDERS = {
+  gemini:    {name:"Google Gemini",    url:"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"},
+  openai:    {name:"OpenAI",           url:"https://api.openai.com/v1/chat/completions"},
+  anthropic: {name:"Anthropic Claude", url:"https://api.anthropic.com/v1/messages"},
+  cohere:    {name:"Cohere",           url:"https://api.cohere.ai/v1/generate"},
+  mistral:   {name:"Mistral",          url:"https://api.mistral.ai/v1/chat/completions"},
+};
+
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let currentTab = 'wordsearch';
+let generatedPages = [];
+let currentPageIdx = 0;
+let sessionApiKey = '';
+let sessionProvider = '';
+const TABS_NO_WORDS = ['sudoku','maze'];
+
+// ═══════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════
+function init() {
+  const g = document.getElementById('categoryGrid');
+  for (const cat of Object.keys(WORD_BANK)) {
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn';
+    btn.textContent = cat;
+    btn.onclick = () => {
+      document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('customWords').value = WORD_BANK[cat].join('\n');
+      updateWordCount();
+    };
+    g.appendChild(btn);
+  }
+  updateWordCount();
+}
+
+function updateWordCount() { document.getElementById('wordCountBadge').textContent = parseWords().length + ' words'; }
+function clearWords() { document.getElementById('customWords').value=''; document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active')); updateWordCount(); }
+function shuffleWords() { const w=parseWords(); shuffle(w); document.getElementById('customWords').value=w.join('\n'); }
+function parseWords() { return document.getElementById('customWords').value.split(/[\n,]+/).map(w=>w.trim().toUpperCase().replace(/[^A-Z]/g,'')).filter(w=>w.length>=3); }
+function togglePill(pid,cid) { document.getElementById(pid).classList.toggle('checked',document.getElementById(cid).checked); }
+function adjustCount(d) { const e=document.getElementById('bulkCount'); e.value=Math.max(1,Math.min(50,parseInt(e.value||1)+d)); }
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+function togglePanel(panel) { if(typeof panel==='string') panel=document.getElementById(panel); panel.classList.toggle('collapsed'); }
+
+// ═══════════════════════════════════════════
+// AI / BYOK
+// ═══════════════════════════════════════════
+function updateAiProvider() {
+  const p = document.getElementById('aiProvider').value;
+  sessionProvider = p;
+  const keyWrap = document.getElementById('apiKeyWrap');
+  const topicWrap = document.getElementById('aiTopicWrap');
+  const genBtn = document.getElementById('aiGenerateBtn');
+  keyWrap.style.display = p ? '' : 'none';
+  topicWrap.style.display = p ? '' : 'none';
+  if (!p) { genBtn.classList.remove('visible'); updateAiDot('off','No API key — using built-in word bank'); }
+  else updateAiStatus();
+}
+
+function updateAiStatus() {
+  const key = document.getElementById('apiKey').value.trim();
+  sessionApiKey = key;
+  const genBtn = document.getElementById('aiGenerateBtn');
+  if (key && sessionProvider) {
+    updateAiDot('active', AI_PROVIDERS[sessionProvider].name + ' connected — ready to generate');
+    genBtn.classList.add('visible');
+  } else {
+    updateAiDot('off','Paste your API key above to enable AI generation');
+    genBtn.classList.remove('visible');
+  }
+}
+
+function updateAiDot(state, text) {
+  const dot = document.getElementById('aiDot');
+  const txt = document.getElementById('aiStatusText');
+  dot.className = 'ai-dot' + (state==='active'?' active':state==='loading'?' loading':'');
+  txt.textContent = text;
+}
+
+async function generateWithAI() {
+  if (!sessionApiKey || !sessionProvider) { toast('Please select a provider and enter your API key.'); return; }
+  const count = Math.max(1,Math.min(50,parseInt(document.getElementById('bulkCount').value)||1));
+  const wordsPerPuzzle = currentTab==='scramble' ? parseInt(document.getElementById('scrambleCount').value)||20 :
+                         currentTab==='crossword' ? parseInt(document.getElementById('cwMaxWords').value)||20 : 15;
+  const topic = document.getElementById('aiTopic').value.trim();
+  const isHangman = currentTab === 'hangman';
+  const totalWords = isHangman ? count : Math.min(count * wordsPerPuzzle, 750);
+
+  updateAiDot('loading', 'Asking AI to generate words…');
+  document.getElementById('aiGenerateBtn').textContent = '⏳ Generating…';
+
+  let prompt = '';
+  if (isHangman) {
+    prompt = `Generate ${count} words for a hangman puzzle${topic?' about '+topic:''}. For each word provide a one-sentence clue (8-15 words) that describes it without using the word itself. Words should be 6-14 letters, suitable for adults. Return ONLY a JSON array like: [{"word":"ELEPHANT","clue":"The largest land animal known for its trunk"}]. No other text.`;
+  } else {
+    prompt = `Generate exactly ${totalWords} unique English nouns${topic?' related to '+topic:''} suitable for word search puzzles. Requirements: 4-12 letters each, no spaces, no hyphens, no proper nouns, all uppercase, varied topics. Return ONLY a comma-separated list of words on a single line. No numbering, no explanations, nothing else.`;
+  }
+
+  try {
+    const result = await callAI(sessionProvider, sessionApiKey, prompt);
+    if (isHangman) {
+      const parsed = JSON.parse(result.replace(/```json|```/g,'').trim());
+      const lines = parsed.map(item => item.word.toUpperCase()).join('\n');
+      document.getElementById('customWords').value = lines;
+      // Store clues for use during generation
+      window._aiHangmanClues = {};
+      parsed.forEach(item => { window._aiHangmanClues[item.word.toUpperCase()] = item.clue; });
+      updateWordCount();
+      updateAiDot('active', `✓ ${parsed.length} hangman words with clues generated`);
+      toast(`✓ AI generated ${parsed.length} words with clues`);
+    } else {
+      const words = result.split(/[,\n]+/).map(w=>w.trim().toUpperCase().replace(/[^A-Z]/g,'')).filter(w=>w.length>=3);
+      document.getElementById('customWords').value = words.join('\n');
+      updateWordCount();
+      updateAiDot('active', `✓ ${words.length} words generated by AI`);
+      toast(`✓ AI generated ${words.length} words — ready to generate puzzles`);
+    }
+  } catch(e) {
+    updateAiDot('off', 'AI generation failed — using built-in word bank');
+    toast('AI generation failed: ' + (e.message||'check your API key and try again'));
+  }
+  document.getElementById('aiGenerateBtn').textContent = '✨ Generate Words with AI';
+}
+
+async function callAI(provider, key, prompt) {
+  let url, headers, body, extract;
+
+  if (provider === 'gemini') {
+    url = AI_PROVIDERS.gemini.url + '?key=' + key;
+    headers = {'Content-Type':'application/json'};
+    body = JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.8,maxOutputTokens:2048}});
+    extract = d => d.candidates[0].content.parts[0].text;
+  } else if (provider === 'openai') {
+    url = AI_PROVIDERS.openai.url;
+    headers = {'Content-Type':'application/json','Authorization':'Bearer '+key};
+    body = JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:prompt}],max_tokens:2048,temperature:0.8});
+    extract = d => d.choices[0].message.content;
+  } else if (provider === 'anthropic') {
+    url = AI_PROVIDERS.anthropic.url;
+    headers = {'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01'};
+    body = JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:2048,messages:[{role:'user',content:prompt}]});
+    extract = d => d.content[0].text;
+  } else if (provider === 'cohere') {
+    url = AI_PROVIDERS.cohere.url;
+    headers = {'Content-Type':'application/json','Authorization':'Bearer '+key};
+    body = JSON.stringify({model:'command',prompt:prompt,max_tokens:2048,temperature:0.8});
+    extract = d => d.generations[0].text;
+  } else if (provider === 'mistral') {
+    url = AI_PROVIDERS.mistral.url;
+    headers = {'Content-Type':'application/json','Authorization':'Bearer '+key};
+    body = JSON.stringify({model:'mistral-small-latest',messages:[{role:'user',content:prompt}],max_tokens:2048,temperature:0.8});
+    extract = d => d.choices[0].message.content;
+  }
+
+  const res = await fetch(url, {method:'POST', headers, body});
+  if (!res.ok) {
+    const err = await res.json().catch(()=>({}));
+    throw new Error(err.error?.message || err.message || `HTTP ${res.status}`);
+  }
+  const data = await res.json();
+  return extract(data);
+}
+
+// ═══════════════════════════════════════════
+// LEGAL / NAVIGATION
+// ═══════════════════════════════════════════
+function showLegal(section) {
+  document.getElementById('mainContent').style.display='none';
+  document.querySelectorAll('.legal-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('legal-'+section).classList.add('active');
+  document.getElementById('legalWrap').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function hideLegal() {
+  document.getElementById('legalWrap').style.display='none';
+  document.getElementById('mainContent').style.display='';
+  document.querySelectorAll('.legal-section').forEach(s=>s.classList.remove('active'));
+}
+function switchTabAndScroll(tab) {
+  hideLegal();
+  const card = document.querySelector(`.type-card[data-tab="${tab}"]`);
+  if (card) switchTab(tab, card);
+  document.getElementById('tool').scrollIntoView({behavior:'smooth'});
+}
+
+// ═══════════════════════════════════════════
+// TAB
+// ═══════════════════════════════════════════
+function switchTab(tab, cardEl) {
+  currentTab = tab;
+  document.querySelectorAll('.type-card').forEach(c=>c.classList.remove('active'));
+  if (cardEl) cardEl.classList.add('active');
+  document.querySelectorAll('.settings-section').forEach(s=>s.classList.remove('active'));
+  const sec = document.getElementById('sec-'+tab);
+  if (sec) sec.classList.add('active');
+  document.getElementById('wordPanel').style.display = TABS_NO_WORDS.includes(tab) ? 'none' : '';
+  document.getElementById('aiPanel').style.display = TABS_NO_WORDS.includes(tab) ? 'none' : '';
+  resetPreview();
+  if (sessionApiKey && sessionProvider) {
+    const topic = tab==='hangman' ? 'general knowledge' : '';
+    document.getElementById('aiTopic').placeholder = `e.g. ${tab==='hangman'?'Animals, Science, History':'Ocean Animals, Space, Christmas'}...`;
+  }
+}
+
+function resetPreview() {
+  generatedPages=[];currentPageIdx=0;
+  document.getElementById('previewArea').innerHTML=`<div class="empty-state"><div class="empty-icon">⚙</div><div class="empty-title">Your puzzle will appear here</div><div class="empty-sub">Follow steps 1–4 in the sidebar.</div></div>`;
+  document.getElementById('regenBtn').style.display='none';
+  document.getElementById('previewMeta').textContent='';
+  document.getElementById('puzzleNav').classList.remove('visible');
+}
+
+// ═══════════════════════════════════════════
+// PAGE DIMS
+// ═══════════════════════════════════════════
+const PAGE_DIMS={letter:{w:8.5,h:11},  '6x9':{w:6,h:9}, '5x8':{w:5,h:8}};
+const SCALE=96;
+function getPageDim(){return PAGE_DIMS[document.getElementById('pageSize').value];}
+function styledPage(inner,dim,pgNum){
+  const w=Math.round(dim.w*SCALE),h=Math.round(dim.h*SCALE);
+  const numHtml=(pgNum&&document.getElementById('puzzleNumber').checked)?`<div class="puzzle-num">#${pgNum}</div>`:'';
+  return `<div class="puzzle-page" style="width:${w}px;height:${h}px;position:relative;">${numHtml}${inner}</div>`;
+}
+
+// ═══════════════════════════════════════════
+// BULK GENERATE
+// ═══════════════════════════════════════════
+async function generateBulk() {
+  const count=Math.max(1,Math.min(50,parseInt(document.getElementById('bulkCount').value)||1));
+  const words=parseWords();
+  if(!TABS_NO_WORDS.includes(currentTab)&&currentTab!=='hangman'&&words.length<3){toast('Add at least 3 words first.');return;}
+  const prog=document.getElementById('progressWrap');
+  const fill=document.getElementById('progressFill');
+  const lbl=document.getElementById('progressLabel');
+  prog.classList.add('visible');
+  generatedPages=[];
+  const puzzlePages=[],keyPages=[];
+  for(let i=0;i<count;i++){
+    lbl.textContent=`Generating ${i+1} / ${count}…`;
+    fill.style.width=((i/count)*100)+'%';
+    await new Promise(r=>setTimeout(r,0));
+    const result=buildPuzzle(currentTab,words,i+1,count);
+    puzzlePages.push(result.puzzle);
+    if(result.key)keyPages.push(result.key);
+  }
+  fill.style.width='100%';
+  lbl.textContent=`✓ ${count} puzzle${count>1?'s':''} ready`;
+  setTimeout(()=>prog.classList.remove('visible'),2000);
+  generatedPages=[...puzzlePages,...keyPages];
+  currentPageIdx=0;
+  renderCurrentPage();updateNav();
+  document.getElementById('regenBtn').style.display='';
+  document.getElementById('previewMeta').textContent=`${count} puzzle${count>1?'s':''} · ${currentTab}`;
+  toast(`✓ ${count} puzzle${count>1?'s':''} generated`);
+}
+
+function renderCurrentPage(){if(!generatedPages.length)return;document.getElementById('previewArea').innerHTML=`<div style="display:flex;justify-content:center;">${generatedPages[currentPageIdx]}</div>`;}
+function updateNav(){const nav=document.getElementById('puzzleNav');if(generatedPages.length>1){nav.classList.add('visible');document.getElementById('navLabel').textContent=`${currentPageIdx+1} / ${generatedPages.length}`;document.getElementById('navPrev').disabled=currentPageIdx===0;document.getElementById('navNext').disabled=currentPageIdx===generatedPages.length-1;}else{nav.classList.remove('visible');}}
+function navPuzzle(d){currentPageIdx=Math.max(0,Math.min(generatedPages.length-1,currentPageIdx+d));renderCurrentPage();updateNav();}
+
+// ═══════════════════════════════════════════
+// DISPATCHER
+// ═══════════════════════════════════════════
+function buildPuzzle(type,words,pgNum,total){
+  if(type==='wordsearch')return buildWordSearch(words,pgNum,total);
+  if(type==='scramble')  return buildScramble(words,pgNum,total);
+  if(type==='crossword') return buildCrossword(words,pgNum,total);
+  if(type==='sudoku')    return buildSudoku(pgNum,total);
+  if(type==='hangman')   return buildHangman(pgNum,total);
+  if(type==='maze')      return buildMaze(pgNum,total);
+}
+
+// ═══════════════════════════════════════════
+// WORD SEARCH
+// ═══════════════════════════════════════════
+function buildWordSearch(allWords,pgNum,total){
+  const size=parseInt(document.getElementById('gridSize').value);
+  const dirCnt=parseInt(document.getElementById('directions').value);
+  const fillT=document.getElementById('fillType').value;
+  const title=document.getElementById('puzzleTitle').value||'Word Search';
+  const showW=document.getElementById('showWords').checked;
+  const doKey=document.getElementById('answerKey').checked;
+  const dim=getPageDim();
+  const allDirs=[[0,1],[1,0],[0,-1],[-1,0],[1,1],[-1,1],[1,-1],[-1,-1]];
+  const dirs=dirCnt===4?allDirs.slice(0,4):dirCnt===6?allDirs.slice(0,6):allDirs;
+  const grid=Array.from({length:size},()=>Array(size).fill(''));
+  const usedWords=[];
+  for(const word of shuffle([...allWords]).sort((a,b)=>b.length-a.length).filter(w=>w.length<=size)){
+    let placed=false;const sd=shuffle([...dirs]);
+    for(let a=0;a<120&&!placed;a++){const dir=sd[a%sd.length],row=Math.floor(Math.random()*size),col=Math.floor(Math.random()*size);if(canPlaceWS(grid,word,row,col,dir,size)){placeWordWS(grid,word,row,col,dir);usedWords.push({word,row,col,dir});placed=true;}}
+  }
+  const letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  for(let r=0;r<size;r++)for(let c=0;c<size;c++)if(!grid[r][c])grid[r][c]=fillT==='dots'?'·':letters[Math.floor(Math.random()*26)];
+  const placedWords=usedWords.map(u=>u.word);
+  const pageW=dim.w*SCALE,pageH=dim.h*SCALE,margin=0.5*SCALE,inner=pageW-margin*2;
+  const wordListH=showW?80:0,titleH=60;
+  const avail=pageH-margin*2-titleH-wordListH-14;
+  const cellPx=Math.min(Math.floor(Math.min(inner,avail)/size),28);
+  const fontSize=Math.max(7,Math.floor(cellPx*0.54));
+  function mkGrid(hl){const hlSet=new Set();if(hl)for(const{word,row,col,dir}of usedWords)for(let i=0;i<word.length;i++)hlSet.add(`${row+dir[0]*i},${col+dir[1]*i}`);let h=`<div class="ws-grid" style="grid-template-columns:repeat(${size},${cellPx}px);">`;for(let r=0;r<size;r++)for(let c=0;c<size;c++)h+=`<div class="ws-cell${hlSet.has(`${r},${c}`)?' highlighted':''}" style="width:${cellPx}px;height:${cellPx}px;font-size:${fontSize}px;">${grid[r][c]}</div>`;return h+'</div>';}
+  const cols=Math.max(3,Math.floor(inner/82));
+  const wl=showW?`<div class="word-list-area"><div class="word-list-title">Find These Words</div><div class="word-list-grid" style="grid-template-columns:repeat(${cols},1fr);">${placedWords.sort().map(w=>`<div class="word-item">${w}</div>`).join('')}</div></div>`:'';
+  const p=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)}</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="ws-grid-wrap">${mkGrid(false)}</div>${wl}</div>`,dim,pgNum);
+  let key=null;
+  if(doKey)key=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)} — Answer Key</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="ws-grid-wrap">${mkGrid(true)}</div></div>`,dim,null);
+  return{puzzle:p,key};
+}
+function canPlaceWS(g,w,r,c,d,s){for(let i=0;i<w.length;i++){const nr=r+d[0]*i,nc=c+d[1]*i;if(nr<0||nr>=s||nc<0||nc>=s)return false;if(g[nr][nc]&&g[nr][nc]!==w[i])return false;}return true;}
+function placeWordWS(g,w,r,c,d){for(let i=0;i<w.length;i++)g[r+d[0]*i][c+d[1]*i]=w[i];}
+
+// ═══════════════════════════════════════════
+// SCRAMBLE
+// ═══════════════════════════════════════════
+function buildScramble(allWords,pgNum,total){
+  const count=parseInt(document.getElementById('scrambleCount').value)||20;
+  const title=document.getElementById('puzzleTitle').value||'Word Scramble';
+  const doKey=document.getElementById('answerKey').checked;
+  const dim=getPageDim();
+  const words=shuffle([...allWords]).slice(0,count);
+  const items=words.map(w=>({word:w,scrambled:scrambleWord(w)}));
+  const half=Math.ceil(items.length/2),col1=items.slice(0,half),col2=items.slice(half);
+  function renderCol(arr,off,ans){return arr.map((it,i)=>`<div class="scramble-item"><div class="scramble-word" style="${ans?'color:#aaa;':''}">${it.scrambled}</div>${ans?`<div style="font-family:'Syne',sans-serif;font-size:10.5pt;font-weight:700;color:#111;letter-spacing:0.05em;">${it.word}</div>`:'<div class="scramble-blank"></div>'}<div class="scramble-num">${off+i+1}</div></div>`).join('');}
+  const p=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)}</div><div class="puzzle-subtitle">Unscramble each word${total>1?' · Puzzle '+pgNum+' of '+total:''}</div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.16in;"><div class="scramble-list">${renderCol(col1,0,false)}</div><div class="scramble-list">${renderCol(col2,half,false)}</div></div></div>`,dim,pgNum);
+  let key=null;
+  if(doKey)key=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)} — Answer Key</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.16in;"><div class="scramble-list">${renderCol(col1,0,true)}</div><div class="scramble-list">${renderCol(col2,half,true)}</div></div></div>`,dim,null);
+  return{puzzle:p,key};
+}
+function scrambleWord(w){if(w.length<=2)return w;let a=w.split(''),t=0;do{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}t++;}while(a.join('')===w&&t<10);return a.join('');}
+
+// ═══════════════════════════════════════════
+// CROSSWORD
+// ═══════════════════════════════════════════
+function buildCrossword(allWords,pgNum,total){
+  const size=parseInt(document.getElementById('cwGridSize').value);
+  const maxW=parseInt(document.getElementById('cwMaxWords').value)||20;
+  const title=document.getElementById('puzzleTitle').value||'Crossword';
+  const doKey=document.getElementById('answerKey').checked;
+  const dim=getPageDim();
+  const words=shuffle([...allWords]).filter(w=>w.length>=3&&w.length<=size-2).slice(0,maxW);
+  if(!words.length)return{puzzle:styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">No words fit — try shorter words</div></div></div>`,dim,pgNum),key:null};
+  const grid=Array.from({length:size},()=>Array(size).fill(null));
+  const placed=[];
+  placeWordCW(grid,words[0],Math.floor(size/2),Math.floor((size-words[0].length)/2),'H');
+  placed.push({word:words[0],row:Math.floor(size/2),col:Math.floor((size-words[0].length)/2),dir:'H'});
+  for(let wi=1;wi<words.length;wi++){const word=words[wi];let best=null;for(const p of placed){if(best)break;const id=p.dir==='H'?'V':'H';for(let pi=0;pi<p.word.length&&!best;pi++)for(let wi2=0;wi2<word.length&&!best;wi2++){if(p.word[pi]!==word[wi2])continue;let nr,nc;if(id==='H'){nr=p.row+pi;nc=p.col-wi2;}else{nr=p.row-wi2;nc=p.col+pi;}if(canPlaceCW(grid,word,nr,nc,id,size))best={word,row:nr,col:nc,dir:id};}}if(best){placeWordCW(grid,best.word,best.row,best.col,best.dir);placed.push(best);}}
+  const usedCells=new Set();for(const p of placed)for(let i=0;i<p.word.length;i++){const r=p.dir==='H'?p.row:p.row+i,c=p.dir==='H'?p.col+i:p.col;usedCells.add(`${r},${c}`);}
+  const numbers={};let num=1;for(let r=0;r<size;r++)for(let c=0;c<size;c++){if(!usedCells.has(`${r},${c}`))continue;if((usedCells.has(`${r},${c+1}`)&&!usedCells.has(`${r},${c-1}`))||(usedCells.has(`${r+1},${c}`)&&!usedCells.has(`${r-1},${c}`)))numbers[`${r},${c}`]=num++;}
+  const ac=[],dc=[];
+  for(const p of placed){const k=`${p.row},${p.col}`,n=numbers[k]||'?';if(p.dir==='H')ac.push({num:n,word:p.word});else dc.push({num:n,word:p.word});}
+  ac.sort((a,b)=>a.num-b.num);dc.sort((a,b)=>a.num-b.num);
+  const pageW=dim.w*SCALE,margin=0.5*SCALE,inner=pageW-margin*2;
+  const cellPx=Math.min(Math.floor(inner*0.52/size),24),fontSize=Math.max(6,Math.floor(cellPx*0.44));
+  function mkGrid(sl){let h=`<div class="crossword-grid" style="grid-template-columns:repeat(${size},${cellPx}px);">`;for(let r=0;r<size;r++)for(let c=0;c<size;c++){const u=usedCells.has(`${r},${c}`),n=numbers[`${r},${c}`]||'',l=grid[r][c]||'';h+=`<div class="cw-cell ${u?'white':'black'}" style="width:${cellPx}px;height:${cellPx}px;font-size:${fontSize}px;">${n?`<span class="cw-num">${n}</span>`:''} ${u&&sl?l:''}</div>`;}return h+'</div>';}
+  function mkClues(showAnswers){
+    const afmt=ac.map(c=>`<div class="clue-item"><span class="clue-num">${c.num}A</span>${showAnswers?`<strong>${c.word}</strong>`:`(${c.word.length} letters)`}</div>`).join('');
+    const dfmt=dc.map(c=>`<div class="clue-item"><span class="clue-num">${c.num}D</span>${showAnswers?`<strong>${c.word}</strong>`:`(${c.word.length} letters)`}</div>`).join('');
+    return `<div class="crossword-clues"><div class="clue-section"><div class="clue-section-title">Across</div>${afmt}</div><div class="clue-section"><div class="clue-section-title">Down</div>${dfmt}</div></div>`;
+  }
+  const p=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)}</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="crossword-wrap">${mkGrid(false)}${mkClues(false)}</div></div>`,dim,pgNum);
+  let key=null;
+  if(doKey)key=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)} — Answer Key</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="crossword-wrap">${mkGrid(true)}${mkClues(true)}</div></div>`,dim,null);
+  return{puzzle:p,key};
+}
+function canPlaceCW(g,w,r,c,d,s){for(let i=0;i<w.length;i++){const nr=d==='H'?r:r+i,nc=d==='H'?c+i:c;if(nr<0||nr>=s||nc<0||nc>=s)return false;if(g[nr][nc]!==null&&g[nr][nc]!==w[i])return false;}const er=d==='H'?r:r+w.length-1,ec=d==='H'?c+w.length-1:c;if(d==='H'){if((c>0&&g[r][c-1]!==null)||(ec<s-1&&g[r][ec+1]!==null))return false;}else{if((r>0&&g[r-1][c]!==null)||(er<s-1&&g[er+1][c]!==null))return false;}return true;}
+function placeWordCW(g,w,r,c,d){for(let i=0;i<w.length;i++){const nr=d==='H'?r:r+i,nc=d==='H'?c+i:c;g[nr][nc]=w[i];}}
+
+// ═══════════════════════════════════════════
+// SUDOKU
+// ═══════════════════════════════════════════
+function buildSudoku(pgNum,total){
+  const diff=document.getElementById('sudokuDiff').value;
+  const title=document.getElementById('puzzleTitle').value||'Sudoku';
+  const doKey=document.getElementById('answerKey').checked;
+  const dim=getPageDim();
+  const givens={easy:45,medium:35,hard:27,expert:22}[diff];
+  const diffLabel={easy:'Easy',medium:'Medium',hard:'Hard',expert:'Expert'}[diff];
+  const solved=generateSudoku();
+  const puzzle=solved.map(r=>[...r]);
+  let removed=81-givens;
+  for(const pos of shuffle(Array.from({length:81},(_,i)=>i))){if(removed<=0)break;const r=Math.floor(pos/9),c=pos%9;if(puzzle[r][c]!==0){puzzle[r][c]=0;removed--;}}
+  const pageW=dim.w*SCALE,margin=0.5*SCALE,inner=pageW-margin*2;
+  const cellPx=Math.min(Math.floor(inner*0.75/9),56),fontSize=Math.max(10,Math.floor(cellPx*0.52));
+  function mkGrid(board,showAll){let h='<div class="sudoku-grid" style="width:'+(cellPx*9)+'px;">';for(let r=0;r<9;r++)for(let c=0;c<9;c++){const given=puzzle[r][c]!==0,val=board[r][c];const cls=given?'given':showAll?'answer':'empty';const bL=c%3===0?'border-left:2.5px solid #333;':'';const bR=c===8?'border-right:none;':c%3===2?'border-right:2.5px solid #333;':'';const bT=r%3===0?'border-top:2.5px solid #333;':'';const bB=r===8?'border-bottom:none;':r%3===2?'border-bottom:2.5px solid #333;':'';h+=`<div class="sdk-cell ${cls}" style="width:${cellPx}px;height:${cellPx}px;font-size:${fontSize}px;${bL}${bR}${bT}${bB}">${given||showAll?val:''}</div>`;}return h+'</div>';}
+  const p=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)}</div><div class="puzzle-subtitle">${diffLabel}${total>1?' · Puzzle '+pgNum+' of '+total:''}</div></div><div class="sudoku-wrap">${mkGrid(puzzle,false)}<div class="sudoku-difficulty">Difficulty: ${diffLabel}</div></div></div>`,dim,pgNum);
+  let key=null;
+  if(doKey)key=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)} — Answer Key</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="sudoku-wrap">${mkGrid(solved,true)}</div></div>`,dim,null);
+  return{puzzle:p,key};
+}
+function generateSudoku(){const b=Array.from({length:9},()=>Array(9).fill(0));solveSudoku(b);return b;}
+function solveSudoku(b){const e=findEmpty(b);if(!e)return true;const[r,c]=e;for(const n of shuffle([1,2,3,4,5,6,7,8,9])){if(isValid(b,r,c,n)){b[r][c]=n;if(solveSudoku(b))return true;b[r][c]=0;}}return false;}
+function findEmpty(b){for(let r=0;r<9;r++)for(let c=0;c<9;c++)if(b[r][c]===0)return[r,c];return null;}
+function isValid(b,r,c,n){for(let i=0;i<9;i++)if(b[r][i]===n||b[i][c]===n)return false;const br=Math.floor(r/3)*3,bc=Math.floor(c/3)*3;for(let i=0;i<3;i++)for(let j=0;j<3;j++)if(b[br+i][bc+j]===n)return false;return true;}
+
+// ═══════════════════════════════════════════
+// HANGMAN — with clue database + AI clues
+// ═══════════════════════════════════════════
+function buildHangman(pgNum,total){
+  const title=document.getElementById('puzzleTitle').value||'Hangman';
+  const maxWrong=parseInt(document.getElementById('hangmanGuesses').value)||6;
+  const doKey=document.getElementById('answerKey').checked;
+  const dim=getPageDim();
+  let word,clue='',category='';
+
+  // Check AI-generated words first
+  const aiClues = window._aiHangmanClues || {};
+  const custom=parseWords();
+  if(custom.length>0){
+    word=custom[Math.floor(Math.random()*custom.length)];
+    // Try AI clues first, then built-in DB
+    clue = aiClues[word] || (HANGMAN_DB[word]?.clue) || '';
+  } else {
+    const cats=Object.keys(HANGMAN_WORDS);
+    category=cats[Math.floor(Math.random()*cats.length)];
+    const pool=HANGMAN_WORDS[category];
+    word=pool[Math.floor(Math.random()*pool.length)];
+    clue=HANGMAN_DB[word]?.clue || '';
+  }
+
+  function hangSVG(showAll){
+    const body=showAll?`<circle cx="150" cy="75" r="18" fill="none" stroke="#111" stroke-width="3"/><line x1="150" y1="93" x2="150" y2="160" stroke="#111" stroke-width="3"/><line x1="150" y1="110" x2="120" y2="140" stroke="#111" stroke-width="3"/><line x1="150" y1="110" x2="180" y2="140" stroke="#111" stroke-width="3"/><line x1="150" y1="160" x2="125" y2="195" stroke="#111" stroke-width="3"/><line x1="150" y1="160" x2="175" y2="195" stroke="#111" stroke-width="3"/>`:
+    `<circle cx="150" cy="75" r="18" fill="none" stroke="#ddd" stroke-width="2" stroke-dasharray="4"/>`;
+    return `<svg width="200" height="210" viewBox="0 0 220 220"><line x1="40" y1="210" x2="200" y2="210" stroke="#111" stroke-width="3"/><line x1="80" y1="210" x2="80" y2="20" stroke="#111" stroke-width="3"/><line x1="80" y1="20" x2="150" y2="20" stroke="#111" stroke-width="3"/><line x1="150" y1="20" x2="150" y2="57" stroke="#111" stroke-width="3"/>${body}</svg>`;
+  }
+
+  const blanks=word.split('').map(()=>'<span class="hangman-blank"></span>').join('');
+  const wrongSlots=Array(maxWrong).fill('<span class="wrong-blank"></span>').join('');
+  const clueHtml = clue ? `<div><div class="hangman-hint-label">Clue</div><div class="hangman-clue">"${clue}"</div></div>` : '';
+
+  const p=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)}</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="hangman-wrap">${hangSVG(false)}<div class="hangman-blanks">${blanks}</div>${clueHtml}<div style="text-align:center;margin-top:0.1in;"><div style="font-family:'Syne',sans-serif;font-size:7pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#aaa;margin-bottom:4pt;">Wrong Guesses</div><div class="wrong-list">${wrongSlots}</div></div><div class="hangman-letters">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div></div></div>`,dim,pgNum);
+  let key=null;
+  if(doKey)key=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)} — Answer Key</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="hangman-wrap">${hangSVG(true)}<div style="font-family:'Syne',sans-serif;font-size:22pt;font-weight:800;letter-spacing:0.15em;color:#111;text-align:center;margin-top:0.1in;">${word}</div>${clue?`<div class="hangman-clue" style="margin-top:0.1in;">"${clue}"</div>`:''}</div></div>`,dim,null);
+  return{puzzle:p,key};
+}
+
+// ═══════════════════════════════════════════
+// MAZE
+// ═══════════════════════════════════════════
+function buildMaze(pgNum,total){
+  const size=parseInt(document.getElementById('mazeSize').value);
+  const style=document.getElementById('mazeStyle').value;
+  const title=document.getElementById('puzzleTitle').value||'Maze';
+  const doKey=document.getElementById('answerKey').checked;
+  const dim=getPageDim();
+  const N=1,S=2,E=4,W=8,OPP={[1]:2,[2]:1,[4]:8,[8]:4},DX={[4]:1,[8]:-1,[1]:0,[2]:0},DY={[1]:-1,[2]:1,[4]:0,[8]:0};
+  const walls=Array.from({length:size},()=>Array(size).fill(N|S|E|W));
+  const visited=Array.from({length:size},()=>Array(size).fill(false));
+  function carve(cx,cy){visited[cy][cx]=true;for(const d of shuffle([N,S,E,W])){const nx=cx+DX[d],ny=cy+DY[d];if(nx<0||nx>=size||ny<0||ny>=size||visited[ny][nx])continue;walls[cy][cx]&=~d;walls[ny][nx]&=~OPP[d];carve(nx,ny);}}
+  carve(0,0);
+  if(style==='braid'){for(let y=0;y<size;y++)for(let x=0;x<size;x++){if([N,S,E,W].filter(d=>walls[y][x]&d).length===3&&Math.random()<0.3){const bl=[N,S,E,W].filter(d=>walls[y][x]&d),d=bl[Math.floor(Math.random()*bl.length)],nx=x+DX[d],ny=y+DY[d];if(nx>=0&&nx<size&&ny>=0&&ny<size){walls[y][x]&=~d;walls[ny][nx]&=~OPP[d];}}}}
+  function solveMaze(){const q=[[0,0,[]]];const seen=new Set(['0,0']);while(q.length){const[x,y,path]=q.shift();const np=[...path,`${x},${y}`];if(x===size-1&&y===size-1)return new Set(np);for(const d of[N,S,E,W]){if(walls[y][x]&d)continue;const nx=x+DX[d],ny=y+DY[d],k=`${nx},${ny}`;if(!seen.has(k)){seen.add(k);q.push([nx,ny,np]);}}}return new Set();}
+  const solution=solveMaze();
+  const pageW=dim.w*SCALE,margin=0.5*SCALE,inner=pageW-margin*2;
+  const cs=Math.min(Math.floor(inner*0.88/size),32),sw=Math.max(1.5,cs*0.07),mazeW=cs*size,mazeH=cs*size;
+  function renderMaze(showSol){let paths='';for(let y=0;y<size;y++)for(let x=0;x<size;x++){const px=x*cs,py=y*cs;if(walls[y][x]&N)paths+=`<line x1="${px}" y1="${py}" x2="${px+cs}" y2="${py}" stroke="#111" stroke-width="${sw}"/>`;if(walls[y][x]&S)paths+=`<line x1="${px}" y1="${py+cs}" x2="${px+cs}" y2="${py+cs}" stroke="#111" stroke-width="${sw}"/>`;if(walls[y][x]&W)paths+=`<line x1="${px}" y1="${py}" x2="${px}" y2="${py+cs}" stroke="#111" stroke-width="${sw}"/>`;if(walls[y][x]&E)paths+=`<line x1="${px+cs}" y1="${py}" x2="${px+cs}" y2="${py+cs}" stroke="#111" stroke-width="${sw}"/>`;if(showSol&&solution.has(`${x},${y}`))paths+=`<rect x="${px+cs*0.3}" y="${py+cs*0.3}" width="${cs*0.4}" height="${cs*0.4}" fill="#93c5fd" rx="2"/>`;}const ms=cs*0.33;paths+=`<circle cx="${cs*0.5}" cy="${cs*0.5}" r="${ms}" fill="#22c55e" opacity="0.85"/>`;paths+=`<circle cx="${mazeW-cs*0.5}" cy="${mazeH-cs*0.5}" r="${ms}" fill="#ef4444" opacity="0.85"/>`;return `<svg class="maze-canvas" width="${mazeW}" height="${mazeH}" viewBox="0 0 ${mazeW} ${mazeH}" style="background:#fff;border:2px solid #111;">${paths}</svg>`;}
+  const p=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)}</div><div class="puzzle-subtitle">From <span style="color:#16a34a">● Start</span> to <span style="color:#dc2626">● Exit</span>${total>1?' · Puzzle '+pgNum+' of '+total:''}</div></div><div class="maze-wrap">${renderMaze(false)}</div></div>`,dim,pgNum);
+  let key=null;
+  if(doKey)key=styledPage(`<div class="puzzle-page-inner"><div class="puzzle-title-area"><div class="puzzle-main-title">${escHtml(title)} — Answer Key</div>${total>1?`<div class="puzzle-subtitle">Puzzle ${pgNum} of ${total}</div>`:''}</div><div class="maze-wrap">${renderMaze(true)}</div></div>`,dim,null);
+  return{puzzle:p,key};
+}
+
+// ═══════════════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════════════
+async function exportPNG(){
+  if(!generatedPages.length){toast('Generate puzzles first.');return;}
+  toast('Loading PNG library…');
+  try{
+    const s=document.createElement('script');
+    s.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    s.onload=async()=>{
+      const container=document.querySelector('#previewArea .puzzle-page');
+      if(!container){toast('No puzzle visible.');return;}
+      toast('Capturing — please wait…');
+      const canvas=await html2canvas(container,{scale:2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+      const link=document.createElement('a');
+      link.download=`puzzleforge-${currentTab}-${Date.now()}.png`;
+      link.href=canvas.toDataURL('image/png');link.click();
+      toast('✓ PNG saved to your Downloads folder');
+    };
+    s.onerror=()=>toast('PNG library failed to load. Try Print → Save as PDF instead.');
+    document.head.appendChild(s);
+  }catch(e){toast('PNG export failed. Use Print → Save as PDF instead.');}
+}
+
+function exportPDF(){
+  if(!generatedPages.length){toast('Generate puzzles first.');return;}
+  const dim=getPageDim();
+  const allHtml=generatedPages.join('<div style="page-break-after:always;height:0;display:block;"></div>');
+  const win=window.open('','_blank','width=900,height=700');
+  if(!win){toast('Pop-up blocked — please allow pop-ups for this site to save PDF.');return;}
+  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>PuzzleForge — PDF Export</title><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#fff;font-family:Arial,sans-serif}
+@page{size:${dim.w}in ${dim.h}in;margin:0}
+.puzzle-page{width:${dim.w}in;height:${dim.h}in;position:relative;overflow:hidden;background:#fff;page-break-after:always}
+.puzzle-page-inner{padding:0.5in;display:flex;flex-direction:column;gap:0.2in;height:100%}
+.puzzle-title-area{text-align:center;border-bottom:2px solid #111;padding-bottom:0.1in;margin-bottom:0.04in}
+.puzzle-main-title{font-size:18pt;font-weight:800;color:#111;line-height:1.1}
+.puzzle-subtitle{font-size:9pt;color:#777;margin-top:2pt;font-style:italic}
+.puzzle-num{position:absolute;top:0.25in;right:0.42in;font-size:7.5pt;color:#ccc;font-family:monospace}
+.ws-grid{display:inline-grid;gap:0;font-family:'Courier New',monospace;line-height:1}
+.ws-cell{display:flex;align-items:center;justify-content:center;font-weight:500;text-transform:uppercase}
+.ws-cell.highlighted{background:#dbeafe;font-weight:700;color:#1d4ed8}
+.ws-grid-wrap{display:flex;justify-content:center}
+.word-list-area{border-top:1px solid #e5e7eb;padding-top:0.1in}
+.word-list-title{font-size:7.5pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:5pt}
+.word-list-grid{display:grid;gap:2pt 7pt}
+.word-item{font-size:7.5pt;font-weight:600;text-transform:uppercase;letter-spacing:0.05em}
+.scramble-list{display:flex;flex-direction:column;gap:0.07in}
+.scramble-item{display:grid;grid-template-columns:1.4in 1in 0.4in;align-items:center;gap:0.1in;font-family:'Courier New',monospace;font-size:10.5pt;border-bottom:0.5pt solid #e5e7eb;padding-bottom:4pt}
+.scramble-word{font-weight:700;letter-spacing:0.08em}
+.scramble-blank{border-bottom:1pt solid #999;height:14pt}
+.scramble-num{font-size:7pt;color:#ccc}
+.crossword-wrap{display:flex;gap:0.16in;align-items:flex-start}
+.crossword-grid{display:inline-grid;gap:0;border:2px solid #111;flex-shrink:0}
+.cw-cell{display:flex;align-items:center;justify-content:center;border:0.5px solid #ccc;position:relative;font-weight:700;text-transform:uppercase}
+.cw-cell.black{background:#111;border-color:#111}
+.cw-cell.white{background:#fff}
+.cw-num{position:absolute;top:1px;left:2px;font-size:6px;color:#666;line-height:1;font-family:monospace}
+.crossword-clues{flex:1;min-width:0}
+.clue-section{margin-bottom:0.07in}
+.clue-section-title{font-size:7.5pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1pt solid #333;padding-bottom:2pt;margin-bottom:3pt}
+.clue-item{font-size:7pt;color:#222;margin-bottom:2pt;display:flex;gap:3pt}
+.clue-num{font-weight:700;min-width:15pt;font-family:monospace;flex-shrink:0}
+.sudoku-grid{display:inline-grid;grid-template-columns:repeat(9,1fr);border:2.5px solid #111;font-family:'Courier New',monospace}
+.sdk-cell{display:flex;align-items:center;justify-content:center;font-weight:600;aspect-ratio:1}
+.sdk-cell.given{font-weight:800;color:#111}
+.sdk-cell.empty{color:#fff}
+.sdk-cell.answer{color:#2563eb}
+.sudoku-wrap{display:flex;flex-direction:column;align-items:center;gap:0.07in}
+.sudoku-difficulty{font-size:7pt;color:#888;text-align:center;letter-spacing:0.08em;text-transform:uppercase;font-family:monospace}
+.hangman-wrap{display:flex;flex-direction:column;align-items:center;gap:0.12in}
+.hangman-blanks{display:flex;gap:0.09in;justify-content:center;flex-wrap:wrap}
+.hangman-blank{border-bottom:2.5pt solid #111;width:0.25in;height:0.28in;display:inline-block}
+.hangman-clue{font-size:10pt;color:#333;text-align:center;font-style:italic;max-width:4.5in;margin:0 auto;line-height:1.4}
+.hangman-hint-label{font-size:7pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:3pt;text-align:center}
+.hangman-letters{font-size:7pt;color:#bbb;text-align:center;letter-spacing:0.14em;font-family:monospace}
+.wrong-list{display:flex;gap:0.07in;flex-wrap:wrap;justify-content:center}
+.wrong-blank{border-bottom:1.5pt solid #ddd;width:0.21in;height:0.26in}
+.maze-wrap{display:flex;flex-direction:column;align-items:center;gap:0.09in}
+.maze-canvas{display:block}
+</style></head><body>${allHtml}<script>window.onload=function(){setTimeout(function(){window.print();},500);};<\/script></body></html>`);
+  win.document.close();
+  toast('✓ Print window opened — select "Save as PDF" as printer to download');
+}
+
+// ═══════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+let toastTimer=null;
+function toast(msg){const e=document.querySelector('.toast');if(e)e.remove();if(toastTimer)clearTimeout(toastTimer);const el=document.createElement('div');el.className='toast';el.textContent=msg;document.body.appendChild(el);toastTimer=setTimeout(()=>el.remove(),3800);}
+
+// Type card data attributes for footer links
+document.querySelectorAll('.type-card').forEach(c=>{const tab=c.getAttribute('data-tab')||c.querySelector('.type-name').textContent.toLowerCase().replace(/\s/,'');c.setAttribute('data-tab',tab);});
+
+init();
+</script>
+</body>
+</html>
