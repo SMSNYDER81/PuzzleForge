@@ -1,4 +1,0 @@
-Contact: mailto:hello@the-puzzle-forge.org
-Expires: 2028-04-22T00:00:00.000Z
-Preferred-Languages: en
-Canonical: https://the-puzzle-forge.org/.well-known/security.txt
