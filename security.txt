@@ -1,0 +1,4 @@
+Contact: mailto:ssnyder1681@gmail.com
+Expires: 2028-04-22T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://the-puzzle-forge.org/.well-known/security.txt
